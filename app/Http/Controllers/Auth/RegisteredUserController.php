@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Validator;
+
 
 class RegisteredUserController extends Controller
 {
@@ -30,6 +32,30 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
+        $validator = Validator::make($request->all(), [
+            'username' => ['required', 'between:2,20'],
+            'email' => ['required','unique:email','between:5,40','email'],
+            'password' => ['required','alpha_num:ascii','between:8,20'],
+            'passwordConfirm'  => ['required','alpha_num:ascii','same:retype_password','between:8,20'],
+
+            ['username.required' => 'ユーザーネームは必須項目です。',
+                'mail.required' => 'メールアドレスは必須項目です。',
+                'mail.email' => 'メールアドレスを正しく入力してください。',
+                'mail.unique' => 'このメールアドレスは既に使われています。',
+                'password.required' => 'パスワードは必須項目です。',
+                'password.min' => 'パスワードは8文字以上20文字以内で入力してください。',
+                'password.confirmed'=> '確認用パスワードが一致しません。',
+                'password_confirmation.required' => '確認用パスワードは必須項目です。',
+                ],
+    ]);
+
+        if ($validator->fails()) {
+            return redirect('post/create')
+            ->withErrors($validator)
+            ->withInput();
+        }
+
         User::create([
             'username' => $request->username,
             'email' => $request->email,
