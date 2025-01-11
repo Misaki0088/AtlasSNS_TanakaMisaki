@@ -15,7 +15,7 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create']);//表示
     Route::post('register', [RegisteredUserController::class, 'store']);//処理
 
-    Route::get('added', [RegisteredUserController::class, 'create']);
+    Route::get('added', [RegisteredUserController::class, 'added']);
     Route::post('added', [RegisteredUserController::class, 'added']);
 // Route::post通信('URLの部品', [繋げたいController::class, '繋げたいメソッド']);
 
