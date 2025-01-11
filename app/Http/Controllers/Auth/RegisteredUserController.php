@@ -35,9 +35,9 @@ class RegisteredUserController extends Controller
 
         $validator = Validator::make($request->all(), [
             'username' => ['required', 'between:2,20'],
-            'email' => ['required','unique:email','between:5,40','email'],
-            'password' => ['required','alpha_num:ascii','between:8,20'],
-            'passwordConfirm'  => ['required','alpha_num:ascii','same:retype_password','between:8,20'],
+            'email' => ['required','unique:users,email','between:5,40','email'],
+            'password' => ['required','alpha_num:ascii','between:8,20','confirmed'],
+            'password_confirmation'  => ['required'],
 
             ['username.required' => 'ユーザーネームは必須項目です。',
                 'mail.required' => 'メールアドレスは必須項目です。',
@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
     ]);
 
         if ($validator->fails()) {
-            return redirect('post/create')
+            return redirect('register')
             ->withErrors($validator)
             ->withInput();
         }
