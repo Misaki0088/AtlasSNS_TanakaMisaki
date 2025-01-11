@@ -39,15 +39,15 @@ class RegisteredUserController extends Controller
             'password' => ['required','alpha_num:ascii','between:8,20','confirmed'],
             'password_confirmation'  => ['required'],
 
-            ['username.required' => 'ユーザーネームは必須項目です。',
-                'mail.required' => 'メールアドレスは必須項目です。',
-                'mail.email' => 'メールアドレスを正しく入力してください。',
-                'mail.unique' => 'このメールアドレスは既に使われています。',
-                'password.required' => 'パスワードは必須項目です。',
-                'password.min' => 'パスワードは8文字以上20文字以内で入力してください。',
-                'password.confirmed'=> '確認用パスワードが一致しません。',
-                'password_confirmation.required' => '確認用パスワードは必須項目です。',
-                ],
+            // ['username.required' => 'ユーザーネームは必須項目です。',
+            //     'mail.required' => 'メールアドレスは必須項目です。',
+            //     'mail.email' => 'メールアドレスを正しく入力してください。',
+            //     'mail.unique' => 'このメールアドレスは既に使われています。',
+            //     'password.required' => 'パスワードは必須項目です。',
+            //     'password.min' => 'パスワードは8文字以上20文字以内で入力してください。',
+            //     'password.confirmed'=> '確認用パスワードが一致しません。',
+            //     'password_confirmation.required' => '確認用パスワードは必須項目です。',
+            //     ],
     ]);
 
         if ($validator->fails()) {
