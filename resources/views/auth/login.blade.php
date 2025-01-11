@@ -1,7 +1,7 @@
 <x-logout-layout>
 
   <!-- 適切なURLを入力してください -->
-  { Form::open(['url' => 'auth/login']) }
+  { Form::open(['url' => 'auth.login']) }
 
   <p>AtlasSNSへようこそ</p>
 
