@@ -20,4 +20,6 @@ Route::middleware('guest')->group(function () {
 // Route::post通信('URLの部品', [繋げたいController::class, '繋げたいメソッド']);
 
 
+    Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
+
 });
