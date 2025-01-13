@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/follow-list', [PostsController::class, 'index']);
     Route::get('/follower-list', [PostsController::class, 'index']);
 
+Route::get('/top', [PostsController::class, 'index'])->name('top');
+Route::post('/top', [PostsController::class, 'store'])->name('post.store');
 Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
 
 });
