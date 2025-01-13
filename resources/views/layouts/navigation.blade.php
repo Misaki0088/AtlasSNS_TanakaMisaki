@@ -1,8 +1,10 @@
         <div id="head">
             <h1><a><img src="images/atlas.png"></a></h1>
             <div id="">
-                <div id="">
-                    <p>〇〇さん</p>
+                <div id="clear">
+                    @if (session('username'))
+                    <p>{{ session('username') }}さん</p>
+                    @endif
                 </div>
                 <ul>
                     <li><a href="top">ホーム</a></li>
