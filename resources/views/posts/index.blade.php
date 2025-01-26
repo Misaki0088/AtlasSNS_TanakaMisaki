@@ -15,8 +15,8 @@
                 <td>{{ $post->user_id }}</td>
                 <td>{{ $post->post }}</td>
 
-            <td><a class="btn btn-primary" href="/index/{{$post->id}}/update-form">更新</a></td>
-            <td><a class="btn btn-danger" href="/index/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
+            <td><a class="update_button"><a><img src="images/edit.png"></a></button>
+            <td><a class="delete_button" ><a><img src="images/trash.png"></a></button>
             </tr>
         @endforeach
 

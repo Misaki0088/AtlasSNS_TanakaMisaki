@@ -26,6 +26,7 @@ public function store(Request $request)
     public function tweet(Request $request)
     {
         // dd($request);
+        // バリデート設定
         $request -> validate([
         'post' => 'string','between:1,150',
         ]);
@@ -41,9 +42,9 @@ public function store(Request $request)
     }
 
 // 削除機能
-    public function delete($id)
+    public function delete($post)
     {
-        post::where('id', $id)->delete();
-        return redirect('/index');
+        post::where('post', $post)->delete();
+        return redirect('/top');
     }
 }

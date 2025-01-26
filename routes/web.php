@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,4 +32,10 @@ Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
 
 // 投稿のルーティング
 Route::post("/tweet", [PostsController::class, 'tweet']);
+
+// 削除処理のルーティング
+Route::post('/top', [PostsController::class,'delete']);
+
+
+
 });
