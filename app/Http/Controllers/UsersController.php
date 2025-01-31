@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UsersController extends Controller
 {
 
@@ -11,9 +11,10 @@ class UsersController extends Controller
     {
         $keyword = $request->input('keyword');
         if(!empty($keyword)){
-        $users = search::where('like', '%'.$keyword.'%')->get();
+// 変数（箱）＝箱の中身（検索する方法）User←Model
+        $users = User::where('username','like', '%'.$keyword.'%')->get();
         }else{
-        $users = username::all();
+        $users = User::all();
         return view('users.search');
         }
     }

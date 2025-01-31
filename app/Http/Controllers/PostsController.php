@@ -28,11 +28,12 @@ public function store(Request $request)
         // dd($request);
         // バリデート設定
         $request -> validate([
-        'post' => 'string','between:1,150',
+        'post' => 'string','max:1,150',
         ]);
 
         $post = $request->input('tweet');
 // 一つの投稿に必要なもの且つ、毎回の投稿に必要なもの
+ //Postモデル（postテーブル）からレコード情報を取得
         Post::insert([
         'user_id' => Auth::id(),
         'post' => $post,
@@ -44,7 +45,7 @@ public function store(Request $request)
 // 削除機能
     public function delete($post)
     {
-        post::where('post', $post)->delete();
+        post::where('id', $post)->delete();
         return redirect('/top');
     }
 }

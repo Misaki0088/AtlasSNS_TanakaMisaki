@@ -26,16 +26,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/follow-list', [PostsController::class, 'index']);
     Route::get('/follower-list', [PostsController::class, 'index']);
 
-Route::get('/top', [PostsController::class, 'index']);
-Route::post('/top', [PostsController::class, 'store']);
+// ログアウトのルーティング
 Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
 
 // 投稿のルーティング
 Route::post("/tweet", [PostsController::class, 'tweet']);
 
 // 削除処理のルーティング
-Route::post('/top', [PostsController::class,'delete']);
-
+// Route::post('/top', [PostsController::class,'delete']);
 
 
 });

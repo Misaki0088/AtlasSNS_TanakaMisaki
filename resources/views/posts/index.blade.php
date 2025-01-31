@@ -12,11 +12,12 @@
 <!-- 投稿の表示 -->
         @foreach ($posts as $post)
             <tr>
-                <td>{{ $post->user_id }}</td>
+                <td>{{ $post->user->icon_image }}</td>
                 <td>{{ $post->post }}</td>
 
-            <td><a class="update_button"><a><img src="images/edit.png"></a></button>
-            <td><a class="delete_button" ><a><img src="images/trash.png"></a></button>
+            <a><img src="/storage/{{$post->user->icon_image}}"></a>
+            <button type="submit" class="update_button"><a><img src="images/edit.png"></a></button>
+            <button type="submit" class="delete_button" ><a><img src="images/trash.png"></a></button>
             </tr>
         @endforeach
 
