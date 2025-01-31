@@ -11,14 +11,13 @@
 
 <!-- 投稿の表示 -->
         @foreach ($posts as $post)
-            <tr>
-                <td>{{ $post->user->icon_image }}</td>
-                <td>{{ $post->post }}</td>
+         <div class="post"><a><img src="images/icon1.png"></a></div><!--{$post->user->icon_image} 後で使う-->
+                {{ $post->post }}
 
-            <a><img src="/storage/{{$post->user->icon_image}}"></a>
+
             <button type="submit" class="update_button"><a><img src="images/edit.png"></a></button>
             <button type="submit" class="delete_button" ><a><img src="images/trash.png"></a></button>
-            </tr>
+
         @endforeach
 
 <!-- モーダルの中身 -->
