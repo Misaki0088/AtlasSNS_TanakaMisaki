@@ -11,7 +11,7 @@
 
 <!-- 投稿の表示 -->
         @foreach ($posts as $post)
-         <div class="post"><a><img src="images/icon1.png"></a></div><!--{$post->user->icon_image} 後で使う-->
+        <div class="post"><a><img src="images/icon1.png"></a></div><!--{$post->user->icon_image} 後で使う-->
                 {{ $post->post }}
 
 

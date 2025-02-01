@@ -45,7 +45,7 @@ public function store(Request $request)
 // 削除機能
     public function delete($post)
     {
-        post::where('id', $post)->delete();
+        Post::where('id', $post)->delete();
         return redirect('/top');
     }
 }
