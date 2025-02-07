@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="ページの内容を表す文章" />
   <title></title>
+  <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></link>
+  <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></link>
   <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
@@ -36,21 +38,19 @@
     <div id="side-bar">
       <div id="confirm">
       <div id="clear">
-      @if (session('username'))
-  <p>{{ session('username') }}さんの</p>
-  @endif
+  <p>{{ Auth::user()->username }}さんの</p>
         <div>
           <p>フォロー数</p>
           <p>〇〇名</p>
         </div>
-        <p class="btn btn-primary"><a href="follow-list">フォローリスト</a></p>
+        <a class="btn btn-primary" href="follow-list">フォローリスト</a>
         <div>
           <p>フォロワー数</p>
           <p>〇〇名</p>
         </div>
-        <p class="btn btn-primary"><a href="follower-list">フォロワーリスト</a></p>
+        <a class="btn btn-primary" href="follower-list">フォロワーリスト</a>
       </div>
-      <p class="btn btn-primary"><a href="search">ユーザー検索</a></p>
+      <a class="btn btn-primary" href="search">ユーザー検索</a>
       </div>
     </div>
   </div>

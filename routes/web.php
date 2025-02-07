@@ -23,6 +23,7 @@ require __DIR__ . '/auth.php';
 Route::middleware('auth')->group(function () {
     Route::get('/top', [PostsController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'profile']);
+    Route::post('/profile/update', [ProfileController::class, 'profileUpdate']);
     Route::get('/search', [UsersController::class, 'search']);
     Route::get('/follow-list', [FollowsController::class, 'followList']);
     Route::get('/follower-list', [FollowsController::class, 'followerList']);

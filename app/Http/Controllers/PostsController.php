@@ -16,7 +16,7 @@ public function index()
 public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'post' => 'required','string','between:1,150',
+            'post' => 'required','string','max:1,150',
             'created_at' => 'required','string',
         ]);
         return view('posts.index');
