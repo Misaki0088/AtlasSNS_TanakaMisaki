@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 require __DIR__ . '/auth.php';
 
 Route::middleware('auth')->group(function () {
-    Route::get('/top', [PostsController::class, 'index']);
+    Route::get('/top', [PostsController::class, 'index'])->name('/top');
     Route::get('/profile', [ProfileController::class, 'profile']);
     Route::post('/profile/update', [ProfileController::class, 'profileUpdate']);
     Route::get('/search', [UsersController::class, 'search']);
