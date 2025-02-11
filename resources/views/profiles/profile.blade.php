@@ -20,17 +20,27 @@
 
 {{ Form::open(['url' => '/profile/update']) }}
 
+{{ Form::label('ユーザー名') }}
 {{ Form::text('username',Auth::user()->username,['class' => 'input']) }}
 
+{{ Form::label('メールアドレス') }}
 {{ Form::email('email',Auth::user()->email,['class' => 'input']) }}
 
 {{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+{{ Form::password('password',null,['class' => 'input']) }}
 
 {{ Form::label('パスワード確認') }}
 {{ Form::text('password_confirmation',null,['class' => 'input']) }}
 
+{{ Form::label('自己紹介') }}
 {{ Form::text('bio',Auth::user()->bio,['class' => 'input']) }}
+
+<!-- 画像アップロードフィールド -->
+{{ Form::label('プロフィール画像') }}
+<img src="{{ asset('storage/app/public' . Auth::user()->profile_image) }}">
+{{ Form::file('profile_image', ['class' => 'input']) }}
+
+
 
 {{ Form::submit('更新') }}
 
