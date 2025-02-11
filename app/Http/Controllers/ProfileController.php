@@ -46,7 +46,8 @@ if ($validator->fails()) {
             $user->password = Hash::make($request->input('password'));
         }
         // 2つ目の処理
-        User::where('username', $username)->update([
+        $user->update([
+            'username'=> $username,
             'email' => $email,
             'password' => $password,
             'bio' => $bio,
