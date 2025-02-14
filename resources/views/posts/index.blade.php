@@ -16,7 +16,7 @@
 
 
             <button type="submit" class="update_button"><a><img src="images/edit.png"></a></button>
-            <button type="submit" class="delete_button" ><a><img src="images/trash.png"></a></button>
+            <button type="submit" class="delete_button" ><a href="/post/{{$post->id}}/delete"><img src="images/trash.png"></a></button>
 
         @endforeach
 

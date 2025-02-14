@@ -54,13 +54,17 @@ if ($validator->fails()) {
         ]);
 
         // アイコン画像の処理（画像のアップロード）
-        if ($request->hasFile('profile_image')) {
-            $image = $request->file('profile_image');
-        // 画像を指定のディレクトリに保存（public/uploadsディレクトリに保存）
-        $imagePath = $image->storeAs('public/uploads', $imageName);
+        if ($request->hasFile('IconImage')) {
+            $image = $request->file('IconImage');
+
+        // ユニークなファイル名を生成
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+        // 画像を指定のディレクトリに保存
+        $imagePath = $image->storeAs('storage/',$imageName);
 
         // 画像パスをデータベースに保存（必要に応じて）
-        $user->profile_image = $imageName; // 必要に応じてカラム名を変更
+        $user->icon_image = $imageName; // 必要に応じてカラム名を変更
         }
 
         // 更新を保存

@@ -70,6 +70,7 @@ public function store(Request $request)
 // 削除機能
     public function delete($post)
     {
+        // dd($post);
         Post::where('id', $post)->delete();
         return redirect('/top');
     }

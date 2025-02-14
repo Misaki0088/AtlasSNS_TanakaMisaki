@@ -18,7 +18,13 @@
     @endif
 
 
-{{ Form::open(['url' => '/profile/update']) }}
+{{ Form::open(['url' => '/profile/update', 'method' => 'post', 'enctype' => 'multipart/form-data']) }}
+@if( Auth::user()->icon_image!="icon1.png")
+<img src="{{ asset('storage/' . Auth::user()->icon_image) }}">
+@else
+<img src="{{ asset('images/icon1.png') }}">
+@endif
+
 
 {{ Form::label('ユーザー名') }}
 {{ Form::text('username',Auth::user()->username,['class' => 'input']) }}
@@ -37,8 +43,7 @@
 
 <!-- 画像アップロードフィールド -->
 {{ Form::label('プロフィール画像') }}
-<img src="{{ asset('storage/app/public' . Auth::user()->profile_image) }}">
-{{ Form::file('profile_image', ['class' => 'input']) }}
+{{ Form::file('IconImage', ['class' => 'input']) }}
 
 
 
