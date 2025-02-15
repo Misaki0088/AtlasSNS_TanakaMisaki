@@ -38,13 +38,9 @@ if ($validator->fails()) {
         // ユーザーの情報を更新
         $username = $request->input('username');
         $email = $request->input('email');
-        $password = $request->input('password');
+        $password = Hash::make($request->input('password'));
         $bio = $request->input('bio');
 
-        // パスワードを変更する場合のみハッシュ化して更新
-        if ($request->filled('password')) {
-            $user->password = Hash::make($request->input('password'));
-        }
         // 2つ目の処理
         $user->update([
             'username'=> $username,
@@ -61,7 +57,7 @@ if ($validator->fails()) {
         $imageName = time() . '.' . $image->getClientOriginalExtension();
 
         // 画像を指定のディレクトリに保存
-        $imagePath = $image->storeAs('storage/',$imageName);
+        $imagePath = $image->storeAs('public/',$imageName);
 
         // 画像パスをデータベースに保存（必要に応じて）
         $user->icon_image = $imageName; // 必要に応じてカラム名を変更
