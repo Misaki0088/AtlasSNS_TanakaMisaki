@@ -6,10 +6,16 @@
                     <p>{{ session('username') }}さん</p>
                     @endif
                 </div>
+                </div>
                 <ul>
+            <li>
+        <a class="toggle"></a>
+                <ul class="link">
                     <li><a href="top">ホーム</a></li>
                     <li><a href="profile">プロフィール</a></li>
                     <li><a href="logout">ログアウト</a></li>
                 </ul>
+                </ul>
+            </li>
             </div>
         </div>

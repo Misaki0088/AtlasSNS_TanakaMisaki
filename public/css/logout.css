@@ -1,10 +1,37 @@
 @charset "UTF-8";
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     height: 100%;
-    background: #186AC9;
+    background: rgb(41, 146, 255);
+    background: linear-gradient(180deg, rgba(41, 146, 255, 1) 0%, rgba(52, 153, 255, 1) 22%, rgba(251, 224, 69, 1) 100%);
+}
+
+/* ログイン画面 */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ラベルと入力フィールド */
+label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }

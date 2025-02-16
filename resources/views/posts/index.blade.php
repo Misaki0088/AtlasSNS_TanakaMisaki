@@ -1,6 +1,11 @@
 <x-login-layout>
 
-
+<!-- アイコンの表示 -->
+    @if( Auth::user()->icon_image!="icon1.png")
+    <img src="{{ asset('storage/' . Auth::user()->icon_image) }}">
+    @else
+    <img src="{{ asset('images/icon1.png') }}">
+    @endif
 
 <!-- 投稿フォームとボタンの設置 -->
     <form action="/tweet" method="post">

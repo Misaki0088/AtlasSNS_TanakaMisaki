@@ -5,5 +5,11 @@
     $(function () { // if document is ready
       alert('hello world')
     });
+
+    $(function(){
+      $(".toggle").on("click", function () {
+        $(this).next().slideToggle()
+      })
+    });
   </script>
 </head>
