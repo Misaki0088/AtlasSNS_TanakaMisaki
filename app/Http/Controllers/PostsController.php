@@ -42,7 +42,6 @@ public function store(Request $request)
         return redirect('/top');
     }
 
-
     public function edit($id)
     {
         $post = Post::findOrFail($id); // IDで投稿を検索、存在しない場合は404エラー
@@ -73,5 +72,15 @@ public function store(Request $request)
         // dd($post);
         Post::where('id', $post)->delete();
         return redirect('/top');
+    }
+
+
+
+// 「フォローしているユーザー」+「自分自身」の投稿を取得したい場合
+    public function timeline() {
+        $posts = Post::query()->whereIn('user_id', User::users()->follows()->pluck('followed_id'))->orWhere('user_id', User::users()->id)->latest()->post();
+        return view('posts.timeline')->with([
+            'posts' => $posts,
+            ]);
     }
 }

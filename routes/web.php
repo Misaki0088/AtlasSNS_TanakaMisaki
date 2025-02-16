@@ -37,5 +37,10 @@ Route::post("/tweet", [PostsController::class, 'tweet']);
 // 削除処理のルーティング
 Route::get('/post/{id}/delete', [PostsController::class,'delete']);
 
+//フォローするルーティング
+Route::post('follow/{id}', [UsersController::class,'follows']);
+
+//フォロー解除するルーティング
+Route::post('unfollow/{id}', [UsersController::class,'unfollows']);
 
 });

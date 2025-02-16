@@ -28,9 +28,23 @@
         @foreach ($users as $user)
         <div class="search_user_icon"><a><img src="images/icon1.png"></a></div>
             <li>{{ $user->username }}</li>
+            @if (auth()->user()->isFollowing($user->id))
+        <form action="/unfollow/{{$user->id}}" method="post">
+            @csrf
+            <button type="submit" style="background-color: #ccffcc;">フォロー解除</button>
+        </form>
+    @else
+        <form action="/follow/{{$user->id}}" method="post">
+            @csrf
+            <button type="submit" style="background-color: #efc9d2;">フォローする</button>
+        </form>
+    @endif
         @endforeach
+
     </ul>
+
 @endif
+
 
 
 

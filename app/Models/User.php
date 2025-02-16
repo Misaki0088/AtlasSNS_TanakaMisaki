@@ -40,4 +40,35 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Models\Post');
     }
+
+    public function following()//フォローしているユーザーの取得
+    {
+        return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
+//使用するクラス、使用するテーブル（中間テーブル）、フォローする方のid、フォローされる方のid
+    }
+
+    public function followed()//フォローされているユーザーの取得
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id');
+//使用するクラス、使用するテーブル（中間テーブル）、フォローされる方のid、フォローする方のid
+    }
+
+    public function follow(Int $user_id)//フォロー追加するためのメソッド
+    {
+        return $this->following()->attach($user_id);
+    }
+
+    public function unfollow(Int $user_id)//フォロー解除するためのメソッド
+    {
+        return $this->following()->detach($user_id);
+    }
+
+// フォローしているか
+    public function isFollowing(Int $user_id)
+    {
+    return (bool) $this->following()->where('followed_id', $user_id)->first(['follows.id']);//どっちのテーブル名なの？＋.カラム名
+    }
+
+
+
 }
