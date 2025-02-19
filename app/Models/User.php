@@ -69,6 +69,16 @@ class User extends Authenticatable
     return (bool) $this->following()->where('followed_id', $user_id)->first(['follows.id']);//どっちのテーブル名なの？＋.カラム名
     }
 
+// フォロー数を取得
+    public function getFollowersCount()
+    {
+        return $this->following()->count();
+    }
 
+// フォロワー数を取得
+    public function getFollowingCount()
+    {
+        return $this->followed()->count();
+    }
 
 }

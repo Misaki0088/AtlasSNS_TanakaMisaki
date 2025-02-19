@@ -26,29 +26,41 @@ class UsersController extends Controller
         return view('users.search',['users'=>$users]);
     }
 
- // フォロー
+// フォロー
     public function follows($id)
     {
     $user = auth()->user();
-     // フォローしているか
+// フォローしているか
     $is_following = $user->isFollowing($id);//isFollowingはuser.phpのメソッド名
     if(!$is_following) {
-         // フォローしていなければフォローする
+// フォローしていなければフォローする
         $user->follow($id);//フォロー追加するためのメソッドのメソッド名がくる→follow
         return back();
     }
     }
 
- // フォロー解除
+// フォロー解除
     public function unfollows($id)
     {
     $user = auth()->user();
-     // フォローしているか
+// フォローしているか
     $is_followed= $user->isFollowing($id);
     if($is_followed) {
-         // フォローしていればフォローを解除する
+// フォローしていればフォローを解除する
     $user->unfollow($id);
     return back();
     }
+    }
+
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('profile', [
+            'user' => $user,
+            'followersCount' => $user->getFollowersCount(),
+            'followingCount' => $user->getFollowingCount(),
+        ]);
     }
 }
