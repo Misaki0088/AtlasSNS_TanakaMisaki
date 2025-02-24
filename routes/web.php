@@ -43,4 +43,5 @@ Route::post('follow/{id}', [UsersController::class,'follows']);
 //フォロー解除するルーティング
 Route::post('unfollow/{id}', [UsersController::class,'unfollows']);
 
+
 });

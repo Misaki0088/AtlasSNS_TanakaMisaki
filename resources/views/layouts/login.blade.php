@@ -42,7 +42,7 @@
         <div>
           <p>フォロー数</p>
           <p>{{ Auth::user()->following()->count() }}名</p>
-          <!-- followingでリレーションしたから入れないといけない -->
+          <!-- Auth::user()はログインしている人、followingでリレーションしたから入れないといけない -->
         </div>
         <a class="btn btn-primary" href="follow-list">フォローリスト</a>
         <div>
