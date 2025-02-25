@@ -74,8 +74,6 @@ public function store(Request $request)
         return redirect('/top');
     }
 
-
-
 // 「フォローしているユーザー」+「自分自身」の投稿を取得したい場合
     public function timeline() {
         $posts = Post::query()->whereIn('user_id', User::users()->follows()->pluck('followed_id'))->orWhere('user_id', User::users()->id)->latest()->post();
