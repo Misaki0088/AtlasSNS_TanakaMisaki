@@ -69,4 +69,13 @@ if ($validator->fails()) {
          // 更新後にトップページにリダイレクト
         return redirect('/top');
     }
+
+    public function userprofile($id)
+    {
+        // ユーザーIDに基づいてユーザー情報を取得
+        $user = User::findOrFail($id); // ユーザーが見つからない場合は404エラー
+
+        // ユーザー情報をビューに渡す
+        return view('profiles.user-profile', compact('user'));
+    }
 }

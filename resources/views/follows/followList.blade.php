@@ -2,8 +2,10 @@
   <h2>フォローリスト</h2>
   @foreach ($users as $user)<!-- フォローしている人 -->
     <div>
+    <a href="{{ route('user-profile', ['id' => $user->id]) }}">
     @if( $user->icon_image!="icon1.png")<!-- フォローしている人のアイコンがicon1じゃなかったら… -->
     <img src="{{ asset('storage/' . $user->icon_image) }}"><!-- ストレージに入っているアイコンを表示してくれ -->
+    
     @else
     <img src="{{ asset('images/icon1.png') }}"><!-- ストレージにはいっていなかったらicon1を表示させてくれ -->
     @endif

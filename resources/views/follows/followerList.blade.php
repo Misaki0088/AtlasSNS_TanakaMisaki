@@ -2,6 +2,7 @@
   <h2>フォロワーリスト</h2>
   @foreach ($users as $user)
     <div>
+    <a href="{{ route('user-profile', ['id' => $user->id]) }}">
     @if( $user->icon_image!="icon1.png")
     <img src="{{ asset('storage/' . $user->icon_image) }}">
     @else

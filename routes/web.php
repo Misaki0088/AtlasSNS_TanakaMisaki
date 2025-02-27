@@ -27,7 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/search', [UsersController::class, 'search']);
     Route::get('/follow-list', [FollowsController::class, 'followList']);
     Route::get('/follower-list', [FollowsController::class, 'followerList']);
-    Route::get('/profile/id', [UserController::class, 'Profile']);
+   // routes/web.php
+Route::get('/user-profile/{id}', [ProfileController::class, 'userprofile'])->name('user-profile');
+
 
 // ログアウトのルーティング
 Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
