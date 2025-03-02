@@ -61,48 +61,7 @@ ul{
     margin:0 auto;
 }
 li{
-    background-color: #fef5e0;
+    background-color: #186AC9;
     list-style:none;
     margin-top:10px;
-}
-
-
-.question{
-    position: relative;
-    margin: 0;
-    padding: .5em 1em;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-}
-.question:hover{
-text-decoration:underline;
-}
-
-.question:after {
-    content: "";
-    position: absolute;
-    right: 25px;
-    top: 38%;
-    transition: all 0.2s ease-in-out;
-  /*   要素の動きを指定 */
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-top: solid 4px #000;
-    border-right: solid 4px #000;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-  /* transform: rotateで要素の角度を指定 */
-
-}
-
-.question.open:after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 45%;
-  /*   .openクラスがついた時の要素の角度を指定 */
-}
-.answer{
-    padding: .5em 1em;
 }
