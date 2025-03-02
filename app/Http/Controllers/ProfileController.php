@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
@@ -73,9 +74,50 @@ if ($validator->fails()) {
     public function userprofile($id)
     {
         // ユーザーIDに基づいてユーザー情報を取得
-        $user = User::findOrFail($id); // ユーザーが見つからない場合は404エラー
+        $users = User::findOrFail($id); // ユーザーが見つからない場合は404エラー
+
+        // ユーザーの投稿を取得
+        $posts = Post::where('user_id', $id)->get(); // ユーザーの投稿を取得
+
 
         // ユーザー情報をビューに渡す
-        return view('profiles.user-profile', compact('user'));
+        return view('profiles.userprofile', compact('users', 'posts'));
     }
+
+    // ユーザーの投稿を表示
+    public function userpost($id)
+    {
+        // ユーザーIDに基づいてユーザー情報を取得
+        $users = User::findOrFail($id); // ユーザーが見つからない場合は404エラー
+
+        // ユーザー情報と投稿をビューに渡す
+    return view('profiles.userprofile', compact('users', 'posts'));
+    }
+
+    // フォロー
+    public function follows($id)
+    {
+    $user = auth()->user();
+    // フォローしているか
+    $is_following = $user->isFollowing($id);//isFollowingはuser.phpのメソッド名
+    if(!$is_following) {
+    // フォローしていなければフォローする
+    $user->follow($id);//フォロー追加するためのメソッドのメソッド名がくる→follow
+    return back();
+    }
+    }
+
+    // フォロー解除
+    public function unfollows($id)
+    {
+    $user = auth()->user();
+    // フォローしているか
+    $is_followed= $user->isFollowing($id);
+    if($is_followed) {
+    // フォローしていればフォローを解除する
+    $user->unfollow($id);
+    return back();
+    }
+    }
+
 }

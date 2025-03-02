@@ -39,7 +39,7 @@
             <button type="submit" style="background-color: #efc9d2;">フォローする</button>
         </form>
     @endif
-        @endforeach
+    @endforeach
 
     </ul>
 

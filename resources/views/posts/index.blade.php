@@ -1,4 +1,12 @@
 <x-login-layout>
+<!-- アコーディオンメニュー  -->
+<div class="accordionmenu">
+    <p>ホーム</p>
+    <p>プロフィール編集</p>
+    <p>ログアウト</p>
+</div>
+
+
 
 <!-- アイコンの表示 -->
     @if( Auth::user()->icon_image!="icon1.png")

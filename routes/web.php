@@ -21,18 +21,18 @@ use Illuminate\Support\Facades\Auth;
 require __DIR__ . '/auth.php';
 
 Route::middleware('auth')->group(function () {
-    Route::get('/top', [PostsController::class, 'index'])->name('/top');
-    Route::get('/profile', [ProfileController::class, 'profile']);
+    Route::get('/top', [PostsController::class, 'index'])->name('top');
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::post('/profile/update', [ProfileController::class, 'profileUpdate']);
-    Route::get('/search', [UsersController::class, 'search']);
-    Route::get('/follow-list', [FollowsController::class, 'followList']);
-    Route::get('/follower-list', [FollowsController::class, 'followerList']);
+    Route::get('/search', [UsersController::class, 'search'])->name('search');
+    Route::get('/follow-list', [FollowsController::class, 'followList'])->name('followList');
+    Route::get('/follower-list', [FollowsController::class, 'followerList'])->name('followerList');
    // routes/web.php
 Route::get('/user-profile/{id}', [ProfileController::class, 'userprofile'])->name('user-profile');
 
 
 // ログアウトのルーティング
-Route::get('logout', [AuthenticatedSessionController::class, 'logout']);
+Route::get('logout', [AuthenticatedSessionController::class, 'logout'])->name('logout');
 
 // 投稿のルーティング
 Route::post("/tweet", [PostsController::class, 'tweet']);
