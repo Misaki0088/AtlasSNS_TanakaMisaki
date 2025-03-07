@@ -24,6 +24,7 @@ header {
     border-left: 1px solid #727272;
 }
 
+
 /* モーダルの投稿機能 */
 .content {
     margin: 0 auto;
@@ -56,12 +57,46 @@ header {
 }
 
 /* アコーディオンメニュー */
-ul{
+.accordion-content{
     width: 300px;
     margin:0 auto;
+    display: none;
 }
+
 li{
     background-color: #186AC9;
     list-style:none;
     margin-top:10px;
+}
+
+.accordion{
+    content: "";
+    position: absolute;
+    right: 60px;
+    top: 20%;
+    transition: all 0.8s ease-in-out;
+
+    width: 30px;
+    height: 30px;
+    border-top: solid 4px #000;
+    border-right: solid 4px #000;
+
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.accordion.open{
+    content: "";
+    position: absolute;
+    right: 60px;
+    top: 20%;
+    transition: all 0.8s ease-in-out;
+
+    width: 30px;
+    height: 30px;
+    border-top: solid 4px #000;
+    border-right: solid 4px #000;
+
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
 }
