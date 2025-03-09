@@ -37,6 +37,9 @@ Route::get('logout', [AuthenticatedSessionController::class, 'logout'])->name('l
 // 投稿のルーティング
 Route::post("/tweet", [PostsController::class, 'tweet']);
 
+// 編集のルーティング
+Route::post('/post/update', [PostsController::class, 'update']);
+
 // 削除処理のルーティング
 Route::get('/post/{id}/delete', [PostsController::class,'delete']);
 

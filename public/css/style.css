@@ -26,6 +26,10 @@ header {
 
 
 /* モーダルの投稿機能 */
+.modal.is-open {
+    display: block;
+}
+
 .content {
     margin: 0 auto;
     padding: 40px;

@@ -42,28 +42,22 @@ public function store(Request $request)
         return redirect('/top');
     }
 
-    public function edit($id)
-    {
-        $post = Post::findOrFail($id); // IDで投稿を検索、存在しない場合は404エラー
-        return view('posts.edit', ['post' => $post]); // 編集用フォームを表示
-    }
-
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         // バリデーション
         $validated = $request->validate([
-            'post' => 'required','string','max:150', // 投稿内容が必須で、最大150文字
+            'post_content' => 'required','string','max:150', // 投稿内容が必須で、最大150文字
         ]);
 
         // 投稿をIDで検索
-        $post = Post::findOrFail($id);
-
-        // 投稿内容を更新
-        $post->post = $request->input('post');
-        $post->save(); // 保存
+        $id = $request->input('post_id');
+        $post = $request->input('post_content');
+        // dd($post);
+        Post::where("id",$id)->update(['post' => $post]);
+        // ↑投稿内容を更新
 
         // 更新後、トップページや一覧ページにリダイレクト
-        return redirect('/top');
+        return redirect()->back();
     }
 
 // 削除機能

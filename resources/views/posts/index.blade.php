@@ -19,9 +19,12 @@
         <div class="post"><a><img src="images/icon1.png"></a></div><!--{$post->user->icon_image} 後で使う-->
                 {{ $post->post }}
 
+<!-- 編集ボタンの設置 -->
+    <button type="button" class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
+    <a><img src="images/edit.png"></a></button>
 
-            <button type="submit" class="update_button"><a><img src="images/edit.png"></a></button>
-            <button type="submit" class="delete_button" ><a href="/post/{{$post->id}}/delete"><img src="images/trash.png"></a></button>
+<!-- 削除ボタンの設置 -->
+    <button type="submit" class="delete_button" ><a href="/post/{{$post->id}}/delete"><img src="images/trash.png"></a></button>
 
         @endforeach
 
@@ -29,13 +32,12 @@
     <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-        <form action="" method="">
-                <textarea name="" class="modal_post"></textarea>
-                <input type="hidden" name="" class="modal_id" value="">
+        <form action="/post/update" method="POST">
+                <textarea name="post_content" class="modal_post"></textarea>
+                <input type="hidden" name="post_id" class="modal_id" value="">
                 <input type="submit" value="更新">
                 {{ csrf_field() }}
         </form>
-        <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
 

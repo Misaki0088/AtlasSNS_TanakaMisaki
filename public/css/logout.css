@@ -47,27 +47,26 @@ label {
 .subtitle{
     text-align: center;
     font-size: 3rem;
-    color: #fff;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
 }
 
 .Atlas{
-    color: #fff;
     text-align: center;
+    font-weight:bold;
 }
 
 .form-group{
     color: #fff;
-    font-family: 'Arial', sans-serif;
     font-weight: lighter;
 }
 
 .register{
-    color: #fff;
     text-align: center;
     margin-top: 30px;
 }
+
+p {color: #fff;}
 
 .loginbutton{
     width: 100%;
