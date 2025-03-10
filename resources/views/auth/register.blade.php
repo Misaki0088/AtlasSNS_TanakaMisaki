@@ -2,8 +2,10 @@
     <!-- 適切なURLを入力してください -->
 {{ Form::open(['url' => 'register']) }}
 <!-- <Form action=" " method=" "></Form> -->
-<h2>新規ユーザー登録</h2>
 
+<div class="form-container ">
+<p class="Atlas">新規ユーザー登録</p>
+<div class="form-group">
 {{ Form::label('ユーザー名') }}
 {{ Form::text('username',null,['class' => 'input']) }}
 
@@ -15,11 +17,12 @@
 
 {{ Form::label('パスワード確認') }}
 {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+</div>
 
 {{ Form::submit('登録') }}
 
-<p><a href="login">ログイン画面へ戻る</a></p>
-
+<p class="register"><a href="login">ログイン画面へ戻る</a></p>
+</div>
 {!! Form::close() !!}
 
 @if ($errors->any())

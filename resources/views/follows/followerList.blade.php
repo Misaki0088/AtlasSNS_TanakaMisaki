@@ -14,9 +14,9 @@
       <!-- ユーザーアイコンの表示 -->
     <div>
       @if( $user->icon_image!="icon1.png")
-    <img src="{{ asset('storage/' . $user->icon_image) }}">
+    <img src="{{ asset('storage/' . $user->icon_image) }}" alt="アイコン" id="icon">
     @else
-    <img src="{{ asset('images/icon1.png') }}">
+    <img src="{{ asset('images/icon1.png') }}" alt="初期アイコン" id="firsticon">
     @endif
         <p>{{ $user->username }}</p> <!-- ユーザー名 -->
         @foreach ($posts as $post)

@@ -2,16 +2,16 @@
 
 <!-- アイコンの表示 -->
     @if( Auth::user()->icon_image!="icon1.png")
-    <img src="{{ asset('storage/' . Auth::user()->icon_image) }}">
+    <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="アイコン" id="icon">
     @else
-    <img src="{{ asset('images/icon1.png') }}">
+    <img src="{{ asset('images/icon1.png') }}" alt="初期アイコン" id="firsticon">
     @endif
 
 <!-- 投稿フォームとボタンの設置 -->
     <form action="/tweet" method="post">
         @csrf
     <input type="text" name="tweet" value="" class="Input_form" placeholder="投稿内容を入力してください" required>
-    <button type="submit" class="Submit_button"><a><img src="images/post.png"></a></button>
+    <button type="submit" class="Submit_button"><a><img src="images/post.png" alt="投稿ボタン" id="submitbutton"></a></button>
     </form>
 
 <!-- 投稿の表示 -->
@@ -21,10 +21,10 @@
 
 <!-- 編集ボタンの設置 -->
     <button type="button" class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
-    <a><img src="images/edit.png"></a></button>
+    <a><img src="images/edit.png" alt="編集ボタン" id="update_button"></a></button>
 
 <!-- 削除ボタンの設置 -->
-    <button type="submit" class="delete_button" ><a href="/post/{{$post->id}}/delete"><img src="images/trash.png"></a></button>
+    <button type="submit" class="delete_button" ><a href="/post/{{$post->id}}/delete"><img src="images/trash.png" alt="削除ボタン" id="delete_button"></a></button>
 
         @endforeach
 

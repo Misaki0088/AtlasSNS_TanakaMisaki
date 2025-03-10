@@ -7,6 +7,9 @@ body {}
 /* header */
 header {
     background: #186AC9;
+    margin: 0;
+    padding-top:5px;
+    padding-bottom:10px;
 }
 
 /* main content */
@@ -67,10 +70,26 @@ header {
     display: none;
 }
 
-li{
-    background-color: #186AC9;
+li,li a{
+    background-color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top:0;
     list-style:none;
-    margin-top:10px;
+    margin-bottom:0px;
+    color: gray;
+}
+
+li a:hover{
+    background-color: rgb(3, 7, 121);
+    color: white;
+    text-decoration: none;
+}
+
+.accordion-menu{
+    position: absolute;
+    right: 60px;
+    top: 8%;
 }
 
 .accordion{
@@ -78,15 +97,16 @@ li{
     position: absolute;
     right: 60px;
     top: 20%;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
-    width: 30px;
-    height: 30px;
-    border-top: solid 4px #000;
-    border-right: solid 4px #000;
+    width: 20px;
+    height: 20px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
 
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
+
 }
 
 .accordion.open{
@@ -94,13 +114,44 @@ li{
     position: absolute;
     right: 60px;
     top: 20%;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     width: 30px;
     height: 30px;
-    border-top: solid 4px #000;
-    border-right: solid 4px #000;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
 
     -webkit-transform: rotate(315deg);
     transform: rotate(315deg);
+}
+
+/* ホームのレイアウト */
+/* アイコン */
+#icon{
+    width: 5%;
+}
+
+/* 投稿フォーム */
+.Input_form{
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+  max-width: 800px; /* 最大幅を設定（必要に応じて調整） */
+  margin: 0 auto; /* 横中央に配置 */
+}
+
+/* 投稿ボタン */
+#submitbutton{
+    width: 30px;
+    height: 30px;
+}
+
+/* 編集ボタン */
+#update_button{
+    width: 30px;
+    height: 30px;
+}
+
+/* 削除ボタン */
+#delete_button{
+    width: 30px;
+    height: 30px;
 }

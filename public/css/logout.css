@@ -21,7 +21,7 @@ body {
 }
 
 /* ラベルと入力フィールド */
-label {
+.label {
     font-size: 1rem;
     margin-bottom: 6px;
     display: block;
@@ -63,12 +63,21 @@ label {
 
 .register{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
+
+}
+
+.register a{
+    color: #fff;
+    text-decoration: underline;
 }
 
 p {color: #fff;}
 
-.loginbutton{
-    width: 100%;
-    padding: 10px;
+.btn {
+    position: absolute;
+    top: 56%; /* 上から55%の位置 */
+    left: 55%; /* 左から55%の位置 */
+    transform: translate(-50%, -50%);
 }
+
