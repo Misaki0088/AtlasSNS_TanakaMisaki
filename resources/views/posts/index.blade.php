@@ -4,7 +4,7 @@
     @if( Auth::user()->icon_image!="icon1.png")
     <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="アイコン" id="icon">
     @else
-    <img src="{{ asset('images/icon1.png') }}" alt="初期アイコン" id="firsticon">
+    <img src="{{ asset('images/icon1.png') }}">
     @endif
 
 <!-- 投稿フォームとボタンの設置 -->
@@ -19,13 +19,16 @@
         <div class="post"><a><img src="images/icon1.png"></a></div><!--{$post->user->icon_image} 後で使う-->
                 {{ $post->post }}
 
+    <div class="button-container">
 <!-- 編集ボタンの設置 -->
     <button type="button" class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
     <a><img src="images/edit.png" alt="編集ボタン" id="update_button"></a></button>
 
 <!-- 削除ボタンの設置 -->
-    <button type="submit" class="delete_button" ><a href="/post/{{$post->id}}/delete"><img src="images/trash.png" alt="削除ボタン" id="delete_button"></a></button>
-
+    <button type="submit" class="delete_button" >
+    <a href="/post/{{$post->id}}/delete"><img src="images/trash.png" alt="削除ボタン" id="delete_button">
+    </a></button>
+    </div>
         @endforeach
 
 <!-- モーダルの中身 -->

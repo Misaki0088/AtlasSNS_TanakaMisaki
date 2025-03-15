@@ -14,7 +14,7 @@ body {
 .form-container {
     max-width: 300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #2a28281c;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,6 +28,7 @@ body {
 }
 
 .input {
+    color: #000;
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -56,17 +57,19 @@ body {
     font-weight:bold;
 }
 
+/* フォーム */
 .form-group{
     color: #fff;
     font-weight: lighter;
 }
 
+/* ～新規登録～ */
 .register{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30%;
 
 }
-
+/* リンク */
 .register a{
     color: #fff;
     text-decoration: underline;
@@ -74,10 +77,17 @@ body {
 
 p {color: #fff;}
 
-.btn {
+.login-button {
     position: absolute;
-    top: 56%; /* 上から55%の位置 */
-    left: 55%; /* 左から55%の位置 */
+    top: 60%; /* 上からの位置 */
+    left: 55%; /* 左からの位置 */
+    transform: translate(-50%, -50%);
+}
+
+.resister-button{
+    position: absolute;
+    top: 85%; /* 上からの位置 */
+    left: 55%; /* 左からの位置 */
     transform: translate(-50%, -50%);
 }
 

@@ -19,7 +19,7 @@
 {{ Form::text('password_confirmation',null,['class' => 'input']) }}
 </div>
 
-{{ Form::submit('登録') }}
+{{ Form::submit('新規登録', ['class' => 'btn btn-danger resister-button']) }}
 
 <p class="register"><a href="login">ログイン画面へ戻る</a></p>
 </div>

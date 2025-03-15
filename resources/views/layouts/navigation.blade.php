@@ -1,10 +1,16 @@
         <div id="head">
             <h1><a href="{{ route('top') }}"><img src="../images/atlas.png" style="width: 10%; height: auto;"></a></h1>
                 <div id="clear">
-                    @if (session('username'))
-                    <p>{{ session('username') }}さん</p>
-                    @endif
+                    <p class="name">{{ Auth::user()->username }}さん</p>
                 </div>
+                <div class="header-right">
+        <!-- ユーザー名とアイコン -->
+        @if( Auth::user()->icon_image!="icon1.png")
+        <img src="{{ asset('storage/' . Auth::user()->icon_image ) }}">
+        @else
+        <img src="{{ asset('images/icon1.png') }}">
+        @endif
+    </div>
                 <div class="accordion-menu">
                 <span class="accordion"></span>
                     <ul class="accordion-content">

@@ -11,7 +11,7 @@
   {{ Form::password('password',['class' => 'input']) }}
   </div>
 
-  {{ Form::submit('ログイン', ['class' => 'btn btn-danger']) }}
+  {{ Form::submit('ログイン', ['class' => 'btn btn-danger login-button']) }}
 
   <p class="register"><a href="register">新規ユーザーの方はこちら</a></p>
   </div>
