@@ -9,6 +9,13 @@ header {
     padding-bottom:10px;
 }
 
+.name,.header-right,.header-right img{
+
+}
+.name{
+    color:#fff
+}
+
 /* main content */
 #row {
     display: flex;
@@ -105,16 +112,6 @@ li a:hover{
     transform: rotate(315deg);
 }
 
-/* ヘッダーレイアウト */
-.name,.header-right,.header-right img{
-    display: flex; /* 子要素を横並びに */
-    gap: 10px; /* ボタン間の隙間を設定 */
-    margin-left: 73%;
-}
-.name{
-    color:#fff
-}
-
 /* ホームのレイアウト */
 /* アイコン */
 #icon{
@@ -126,8 +123,8 @@ li a:hover{
 /* 投稿フォーム */
 .Input_form{
     width: 100%; /* 親要素の幅いっぱいに広げる */
-  max-width: 800px; /* 最大幅を設定（必要に応じて調整） */
-  margin: 0 auto; /* 横中央に配置 */
+    max-width: 800px;
+    margin: 0 auto; /* 横中央に配置 */
 }
 img {
     margin-left: 10px;
