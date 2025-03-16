@@ -4,7 +4,7 @@
         <h3>{{ $users->username }}</h3> <!-- ユーザー名を表示 -->
         <p>{{ $users->bio }}</p> <!-- ユーザーの自己紹介を表示 -->
         @if( $users->icon_image!="icon1.png")
-        <img src="{{ asset('storage/' . $user->icon_image) }}"alt="アイコン" id="icon">
+        <img src="{{ asset('storage/' . $users->icon_image) }}"alt="アイコン" id="icon">
         @else
         <img src="{{ asset('images/icon1.png') }}"alt="初期アイコン" id="firsticon">
         @endif

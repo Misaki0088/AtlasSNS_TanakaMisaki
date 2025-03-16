@@ -50,10 +50,10 @@
           <p>{{ Auth::user()->followed()->count() }}名</p>
         </div>
         <a class="btn btn-primary" href="follower-list">フォロワーリスト</a>
-      </div>
+        </div>
       <a class="btn btn-primary" href="search">ユーザー検索</a>
-      </div>
-    </div>
+        </div>
+        </div>
   </div>
   <footer>
   </footer>

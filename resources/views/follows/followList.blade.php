@@ -1,23 +1,23 @@
 <x-login-layout>
-  <h2>フォローリスト</h2>
-  @foreach ($users as $user)<!-- フォローしている人 -->
+    <h2>フォローリスト</h2>
+    @foreach ($users as $user)<!-- フォローしている人 -->
     <div>
-    <a href="{{ route('user-profile', ['id' => $user->id]) }}">
-    @if( $user->icon_image!="icon1.png")<!-- フォローしている人のアイコンがicon1じゃなかったら… -->
-    <img src="{{ asset('storage/' . $user->icon_image) }}"><!-- ストレージに入っているアイコンを表示してくれ -->
-    @else
-    <img src="{{ asset('images/icon1.png') }}"><!-- ストレージにはいっていなかったらicon1を表示させてくれ -->
-    @endif
-    @endforeach
+        <a href="{{ route('user-profile', ['id' => $user->id]) }}">
+        @if( $user->icon_image!="icon1.png")<!-- もしフォローしている人のアイコンがicon1じゃなかったら… -->
+        <img src="{{ asset('storage/' . $user->icon_image) }}"><!-- ストレージに入っているアイコンを表示してくれ -->
+        @else
+        <img src="{{ asset('images/icon1.png') }}"><!-- ストレージにはいっていなかったらicon1を表示させてくれ -->
+        @endif
+        @endforeach
     </div>
     @foreach ($users as $user)
-      <!-- ユーザーアイコンの表示 -->
+    <!-- ユーザーアイコンの表示 -->
     <div>
 
     @if( $user->icon_image!="icon1.png")
-    <img src="{{ asset('storage/' . $user->icon_image) }}">
+        <img src="{{ asset('storage/' . $user->icon_image) }}">
     @else
-    <img src="{{ asset('images/icon1.png') }}">
+        <img src="{{ asset('images/icon1.png') }}">
     @endif
         <p>{{ $user->username }}</p> <!-- ユーザー名 -->
         @foreach ($posts as $post)
@@ -28,8 +28,6 @@
                 </div>
             @endif
         @endforeach
-    </div>
-@endforeach
+                </div>
+    @endforeach
 </x-login-layout>
-
-

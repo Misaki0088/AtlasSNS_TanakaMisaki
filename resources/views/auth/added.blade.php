@@ -1,7 +1,7 @@
 <x-logout-layout>
   <div id="clear">
   @if (session('username'))
-  <p>{{ session('username') }}さん</p>
+    <p>{{ session('username') }}さん</p>
   @endif
     <p>ようこそ！AtlasSNSへ！</p>
     <p>ユーザー登録が完了しました。</p>

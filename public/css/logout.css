@@ -12,6 +12,7 @@ body {
 
 /* ログイン画面 */
 .form-container {
+    position: relative;
     max-width: 300px;
     margin: 0 auto;
     padding: 30px;
@@ -37,57 +38,63 @@ body {
     font-size: 1rem;
 }
 
-.submit{
+.submit {
     padding: 10px;
 }
 
-.title{
+.title {
     text-align: center;
 }
 
-.subtitle{
+.subtitle {
     text-align: center;
     font-size: 3rem;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
 }
 
-.Atlas{
+.Atlas {
     text-align: center;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 /* フォーム */
-.form-group{
+.form-group {
     color: #fff;
     font-weight: lighter;
 }
 
+.login-button {
+    position: absolute;
+    top: 70%;
+    /* 上からの位置 */
+    left: 80%;
+    /* 左からの位置 */
+    transform: translate(-50%, -50%);
+}
+
 /* ～新規登録～ */
-.register{
+.register {
     text-align: center;
     margin-top: 30%;
 
 }
+
 /* リンク */
-.register a{
+.register a {
     color: #fff;
     text-decoration: underline;
 }
 
-p {color: #fff;}
-
-.login-button {
-    position: absolute;
-    top: 60%; /* 上からの位置 */
-    left: 55%; /* 左からの位置 */
-    transform: translate(-50%, -50%);
+p {
+    color: #fff;
 }
 
-.resister-button{
+.resister-button {
     position: absolute;
-    top: 85%; /* 上からの位置 */
-    left: 55%; /* 左からの位置 */
+    top: 80%;
+    /* 上からの位置 */
+    left: 80%;
+    /* 左からの位置 */
     transform: translate(-50%, -50%);
 }
-

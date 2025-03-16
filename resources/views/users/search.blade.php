@@ -20,16 +20,16 @@
     {{ Form::close() }}
 
 <!-- $usersはUserControllerでUserテーブルのすべてのことだよって書いた-->
-<!-- $users->isEmpty（←だからUserカラムに無ければ検索結果はありませんって表示してくれってこと）-->
+<!-- $users->isEmpty（←だからUserカラムに無ければ検索結果はありませんって表示してくれよってこと）-->
 @if ($users->isEmpty())
     <p>検索結果はありません。</p>
 @else
     <ul>
-<!-- んで$usersはUserカラムの全てって事なんだけど$userばっかでわかんなくなるから一旦$userって表記にするね -->
-<!-- $user->username（←んで$userの中のusernameカラムを一覧で出してくれってこと -->
+<!-- んで$usersはUserカラムの全てって事なんだけど$userばっかりでわかんなくなるから一旦$userって表記にするね -->
+<!-- $user->username（←んで$userの中のusernameカラムを一覧で出してくれよってこと -->
         @foreach ($users as $user)
         <div class="search_user_icon"><a><img src="images/icon1.png" ></a></div>
-            <li>{{ $user->username }}</li>
+            <li class="follows">{{ $user->username }}</li>
             @if (auth()->user()->isFollowing($user->id))
         <form action="/unfollow/{{$user->id}}" method="post">
             @csrf
