@@ -8,7 +8,7 @@
         @else
         <img src="{{ asset('images/icon1.png') }}"><!-- ストレージにはいっていなかったらicon1を表示させてくれ -->
         @endif
-        @endforeach
+    @endforeach
     </div>
     @foreach ($users as $user)
     <!-- ユーザーアイコンの表示 -->

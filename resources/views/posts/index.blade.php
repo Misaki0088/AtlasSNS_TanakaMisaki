@@ -1,11 +1,6 @@
 <x-login-layout>
 
-<!-- アイコンの表示 -->
-    @if( Auth::user()->icon_image!="icon1.png")
-        <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="アイコン" id="icon">
-        @else
-        <img src="{{ asset('images/icon1.png') }}">
-    @endif
+
 
 <!-- 投稿フォームとボタンの設置 -->
     <form action="/tweet" method="post">
@@ -16,7 +11,8 @@
 
 <!-- 投稿の表示 -->
     @foreach ($posts as $post)
-        <div class="post"><a><img src="{{ asset('storage/' . Auth::user()->icon_image) }}" alt="アイコン" id="icon"></a></div>
+    <!-- アイコンの表示 -->
+        <div class="post"><a><img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a></div>
                 {{ $post->post }}
 
     <div class="button-container">

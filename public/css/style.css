@@ -5,13 +5,6 @@
 header {
     background: #186AC9;
     margin: 0;
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-
-.header-icon {
-    width: 15%;
-    height: auto;
 }
 
 #clear {
@@ -19,7 +12,7 @@ header {
 }
 
 #clear img {
-    width: 40%;
+    width: 20%;
     height: auto;
 }
 
@@ -27,9 +20,13 @@ header {
     color: #fff
 }
 
-.name,
 .header-icon {
-    padding-left: 30%;
+    width: 20%;
+    height: auto;
+}
+
+.name,
+.header-ico img {
 }
 
 /* main content */
@@ -111,14 +108,14 @@ li a:hover {
 .accordion-menu {
     position: absolute;
     right: 60px;
-    top: 8%;
+    top: 5%;
 }
 
 .accordion {
     content: "";
     position: absolute;
     right: 60px;
-    top: 20%;
+    top: 15%;
     transition: all 0.3s ease-in-out;
     width: 20px;
     height: 20px;
@@ -157,7 +154,7 @@ li a:hover {
 .Input_form {
     width: 100%;
     /* 親要素の幅いっぱいに広げる */
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     /* 横中央に配置 */
 }
@@ -189,7 +186,7 @@ img {
     /* 子要素を横並びに */
     gap: 10px;
     /* ボタン間の隙間を設定 */
-    margin-left: 85%;
+    margin-left: 70%;
 }
 
 .update_button,
