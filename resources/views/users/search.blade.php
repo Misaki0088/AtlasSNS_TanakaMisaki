@@ -27,10 +27,10 @@
     <ul>
 <!-- んで$usersはUserカラムの全てって事なんだけど$userばっかりでわかんなくなるから一旦$userって表記にするね -->
 <!-- $user->username（←んで$userの中のusernameカラムを一覧で出してくれよってこと -->
-        @foreach ($users as $user)
-        <div class="search_user_icon"><a><img src="images/icon1.png" ></a></div>
+@foreach ($users as $user)
+        <div class="search_user_icon"><a><img src="{{ asset('storage/' . $user->icon_image) }}" ></a></div>
             <li class="follows">{{ $user->username }}</li>
-            @if (auth()->user()->isFollowing($user->id))
+    @if (auth()->user()->isFollowing($user->id))
         <form action="/unfollow/{{$user->id}}" method="post">
             @csrf
             <button type="submit" style="background-color: #ccffcc;">フォロー解除</button>
@@ -41,7 +41,7 @@
             <button type="submit" style="background-color: #efc9d2;">フォローする</button>
         </form>
     @endif
-    @endforeach
+@endforeach
 
     </ul>
 

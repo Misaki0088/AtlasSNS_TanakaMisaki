@@ -44,14 +44,14 @@
           <p>{{ Auth::user()->following()->count() }}名</p>
           <!-- Auth::user()はログインしている人、followingでリレーションしたから入れないといけない -->
         </div>
-        <a class="btn btn-primary" href="follow-list">フォローリスト</a>
+        <a class="btn btn-primary" href="/follow-list">フォローリスト</a>
         <div>
           <p>フォロワー数</p>
           <p>{{ Auth::user()->followed()->count() }}名</p>
         </div>
-        <a class="btn btn-primary" href="follower-list">フォロワーリスト</a>
+        <a class="btn btn-primary" href="/follower-list">フォロワーリスト</a>
         </div>
-      <a class="btn btn-primary" href="search">ユーザー検索</a>
+      <a class="btn btn-primary" href="/search">ユーザー検索</a>
         </div>
         </div>
   </div>

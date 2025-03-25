@@ -1,16 +1,8 @@
 <div id="head">
-    <div id="clear">
-        <h1><a href="{{ route('top') }}"><img src="../images/atlas.png"></a></h1>
+    <div class="atlas">
+        <a href="{{ route('top') }}"><img src="../images/atlas.png"></a>
+        </div>
             <p class="name">{{ Auth::user()->username }}さん</p>
-                <div class="header-icon">
-                    <!-- ユーザー名とアイコン -->
-                    @if( Auth::user()->icon_image!="icon1.png")
-                        <img src="{{ asset('storage/' . Auth::user()->icon_image ) }}">
-                    @else
-                        <img src="{{ asset('images/icon1.png') }}">
-                    @endif
-                </div>
-    </div>
         <div class="accordion-menu">
             <span class="accordion"></span>
                 <ul class="accordion-content">
@@ -19,4 +11,10 @@
                     <li><a href="logout">ログアウト</a></li>
                 </ul>
         </div>
+                    <!-- ユーザー名とアイコン -->
+                    @if( Auth::user()->icon_image!="icon1.png")
+                        <img src="{{ asset('storage/' . Auth::user()->icon_image ) }}"class="header-icon">
+                    @else
+                        <img src="{{ asset('images/icon1.png') }}"class="header-icon">
+                    @endif
 </div>

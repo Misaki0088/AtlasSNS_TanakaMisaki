@@ -46,8 +46,7 @@
 {{ Form::file('IconImage', ['class' => 'input']) }}
 
 
-
-{{ Form::submit('更新') }}
+{{ Form::submit('更新', ['class' => 'btn btn-danger new-button']) }}
 
 {{ Form::close() }}
 

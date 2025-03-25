@@ -17,13 +17,12 @@
 
     <div class="button-container">
         <!-- 編集ボタンの設置 -->
-        <button type="button" class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
-        <a><img src="images/edit.png" alt="編集ボタン" id="update_button"></a></button>
+        <a class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
+        <img src="images/edit.png" alt="編集ボタン" id="update_button"></a></button>
 
         <!-- 削除ボタンの設置 -->
-        <button type="submit" class="delete_button" >
         <a href="/post/{{$post->id}}/delete"><img src="images/trash.png" alt="削除ボタン" id="delete_button">
-        </a></button>
+        </a>
     </div>
         @endforeach
 

@@ -1,7 +1,9 @@
 <x-login-layout>
     <h2>フォローリスト</h2>
+    <div class="user-list">
     @foreach ($users as $user)<!-- フォローしている人 -->
     <div>
+    <div class="user-card">
         <a href="{{ route('user-profile', ['id' => $user->id]) }}">
         @if( $user->icon_image!="icon1.png")<!-- もしフォローしている人のアイコンがicon1じゃなかったら… -->
         <img src="{{ asset('storage/' . $user->icon_image) }}"><!-- ストレージに入っているアイコンを表示してくれ -->
@@ -19,12 +21,12 @@
     @else
         <img src="{{ asset('images/icon1.png') }}">
     @endif
-        <p>{{ $user->username }}</p> <!-- ユーザー名 -->
+    <p class="username">{{ $user->username }}</p> <!-- ユーザー名 -->
         @foreach ($posts as $post)
             @if ($post->user_id === $user->id)
-                <div>
+            <div class="post">
                     <p>{{ $post->post }}</p> <!-- 投稿内容 -->
-                    <p>{{ $post->created_at }}</p><!-- 投稿日付 -->
+                    <p class="post-date">{{ $post->created_at }}</p><!-- 投稿日付 -->
                 </div>
             @endif
         @endforeach

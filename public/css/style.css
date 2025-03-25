@@ -4,14 +4,14 @@
 /* header */
 header {
     background: #186AC9;
-    margin: 0;
+    height: 25%;
 }
 
-#clear {
+#head {
     display: flex;
 }
 
-#clear img {
+.atlas img {
     width: 20%;
     height: auto;
 }
@@ -21,13 +21,10 @@ header {
 }
 
 .header-icon {
-    width: 20%;
+    width: 5%;
     height: auto;
 }
 
-.name,
-.header-ico img {
-}
 
 /* main content */
 #row {
@@ -82,7 +79,7 @@ header {
 /* アコーディオンメニュー */
 .accordion-content {
     width: 300px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: none;
 }
 
@@ -106,15 +103,15 @@ li a:hover {
 }
 
 .accordion-menu {
-    position: absolute;
+    /* position: absolute; */
     right: 60px;
     top: 5%;
 }
 
 .accordion {
     content: "";
-    position: absolute;
-    right: 60px;
+    /* position: absolute; */
+    right: 6px;
     top: 15%;
     transition: all 0.3s ease-in-out;
     width: 20px;
@@ -128,8 +125,8 @@ li a:hover {
 .accordion.open {
     content: "";
     position: absolute;
-    right: 60px;
-    top: 20%;
+    right: 6px;
+    top: 15%;
     transition: all 0.3s ease-in-out;
     width: 20px;
     height: 20px;
@@ -159,7 +156,7 @@ li a:hover {
     /* 横中央に配置 */
 }
 
-img {
+.button-container img {
     margin-left: 10px;
     width: 80px;
     /* 画像の幅を指定 */
@@ -201,10 +198,10 @@ img {
 
 /* ～検索レイアウト～ */
 .search_form {
-    width: 100%;
-    /* 親要素の幅いっぱいに広げる */
+    width: auto;
+    /* 親要素の幅 */
     max-width: 800px;
-    /* 最大幅を設定（必要に応じて調整） */
+    /* 最大幅を設定 */
     margin: 0 auto;
     /* 横中央に配置 */
 }
@@ -222,4 +219,88 @@ li.follows {
     list-style: none;
     margin-bottom: 0px;
     color: gray;
+}
+
+
+
+
+
+/* サイドバーレイアウト */
+#side-bar {
+    width: 250px; /* サイドバーの幅 */
+    position: fixed; /* サイドバーを画面の右側に固定 */
+    top: 72px;/*ヘッダーにかぶらない線の位置のはじまり*/
+    right: 0;
+    height: 80vh; /* 画面の高さ */
+    padding: 20px; /* 内側の余白 */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    border-left: 1px solid #808080; /* 左の線 */
+}
+
+#confirm {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    gap: 20px; /* アイテム間のスペース */
+}
+
+#confirm p {
+    margin: 0; /* pタグの余白を削除 */
+}
+
+#clear {
+    margin-bottom: 20px;
+}
+
+#side-bar .btn {
+    margin-top: 10px; /* ボタンの間隔 */
+    padding: 10px 20px; /* ボタンの内側の余白 */
+    text-align: center;
+    width: auto; /* 幅を自動に設定 */
+    height: auto; /* 高さも自動で調整 */
+    display: block;
+    text-decoration: none; /* リンクの下線を消す */
+}
+
+#side-bar a {
+    text-decoration: none; /* リンクの下線を消す */
+}
+
+#side-bar a.btn {
+    display: block;
+    width: 80%; /* ボタンの横幅 */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* フォローリストレイアウト */
+
+
+
+
+
+
+/* プロフィールレイアウト */
+.label {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input {
+    color: #000;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.new-button {
+    position: absolute;
+    top: 100%;
+    /* 上からの位置 */
+    left: 10%;
+    /* 左からの位置 */
+    width: 15%;
 }
