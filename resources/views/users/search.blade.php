@@ -14,7 +14,6 @@
         @csrf
 <!-- submitはinputの船ようなイメージで大体一緒にいることが多い（今回はsubmit号でinputのkeywordのものを乗せてく） -->
     <input type="text" name="keyword" value="{{ request('keyword') }}" class="search_form" placeholder="ユーザー名" required>
-    <button type="submit" class="Submit_button" >
     <a><img src="images/search.png" ></a>
     </button>
     {{ Form::close() }}
@@ -28,7 +27,13 @@
 <!-- んで$usersはUserカラムの全てって事なんだけど$userばっかりでわかんなくなるから一旦$userって表記にするね -->
 <!-- $user->username（←んで$userの中のusernameカラムを一覧で出してくれよってこと -->
 @foreach ($users as $user)
-        <div class="search_user_icon"><a><img src="{{ asset('storage/' . $user->icon_image) }}" ></a></div>
+        <div class="search_user_icon">
+        @if( $user->icon_image!="icon1.png")
+        <img src="{{ asset('storage/' . $user->icon_image) }}" height="60" width="60">
+        @else
+        <img src="{{ asset('images/icon1.png') }}">
+        @endif
+        </div>
             <li class="follows">{{ $user->username }}</li>
     @if (auth()->user()->isFollowing($user->id))
         <form action="/unfollow/{{$user->id}}" method="post">

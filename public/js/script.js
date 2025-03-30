@@ -6,7 +6,6 @@ $(function () {
     // アコーディオンの開閉処理
     $('.accordion-menu').on('click', function () {
         $(this).find('.accordion').toggleClass('open');
-
         // クリックされたセクションのコンテンツをスライドトグル
         $(this).find('.accordion-content').slideToggle();
     });

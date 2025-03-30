@@ -11,13 +11,19 @@ header {
     display: flex;
 }
 
+/* Atlasのロゴ */
 .atlas img {
-    width: 20%;
+    width: 30%;
     height: auto;
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
 .name {
-    color: #fff
+    color: #fff;
+    margin-left: auto;
+    margin-top: 15px;
+    margin-right: 5%;
 }
 
 .header-icon {
@@ -39,6 +45,45 @@ header {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+    top: 72px;/*ヘッダーにかぶらない線の位置のはじまり*/
+    right: 0;
+    height: 120vh; /* 画面の高さ */
+    padding: 20px; /* 内側の余白 */
+}
+
+#confirm {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    gap: 20px; /* アイテム間のスペース */
+}
+
+#confirm p {
+    margin: 0; /* pタグの余白を削除 */
+}
+
+#clear {
+    margin-bottom: 20px;
+}
+
+#side-bar .btn {
+    margin-top: 10px; /* ボタンの間隔 */
+    padding: 10px 20px; /* ボタンの内側の余白 */
+    text-align: center;
+    width: auto; /* 幅を自動に設定 */
+    height: auto; /* 高さも自動で調整 */
+    display: block;
+    text-decoration: none; /* リンクの下線を消す */
+}
+
+#side-bar a {
+    text-decoration: none; /* リンクの下線を消す */
+}
+
+#side-bar a.btn {
+    display: block;
+    width: 80%; /* ボタンの横幅 */
+    text-align: center;
+    margin-top: 10px;
 }
 
 /* モーダルの投稿機能 */
@@ -78,17 +123,21 @@ header {
 
 /* アコーディオンメニュー */
 .accordion-content {
-    width: 300px;
-    /* margin: 0 auto; */
+    position: relative;
+    width: 265px;
     display: none;
+    margin-top: 18%;
+    margin-left: 33%;
 }
 
 li,
 li a {
+    position: relative;
+    top:30%;
     background-color: #fff;
     text-align: center;
     margin-top: 0;
-    padding: 15px;
+    padding: 10px;
     list-style: none;
     margin-bottom: 0px;
     color: gray;
@@ -103,16 +152,16 @@ li a:hover {
 }
 
 .accordion-menu {
-    /* position: absolute; */
-    right: 60px;
-    top: 5%;
+    position: absolute;
+    right: 6%;
+    top: 3%;
 }
 
 .accordion {
     content: "";
-    /* position: absolute; */
+    position: absolute;
     right: 6px;
-    top: 15%;
+    top: 3%;
     transition: all 0.3s ease-in-out;
     width: 20px;
     height: 20px;
@@ -126,7 +175,7 @@ li a:hover {
     content: "";
     position: absolute;
     right: 6px;
-    top: 15%;
+    top: 3%;
     transition: all 0.3s ease-in-out;
     width: 20px;
     height: 20px;
@@ -139,21 +188,40 @@ li a:hover {
 /* ホームのレイアウト */
 /* アイコン */
 #icon {
-    width: 8%;
     width: 80px;
     /* 画像の幅を指定 */
     height: 80px;
     /* 画像の高さを指定 */
-    margin-left: 10px;
+    margin-left: 20%;
 }
 
 /* 投稿フォーム */
+.form-container{
+    display: flex;
+    gap: 2%;
+}
+
+.form-container textarea{
+height: 50px;
+}
+
+.tweet{
+    display: flex;
+}
+
+.tweet-icon {
+/* これから投稿するフォーム */
+width: 70px;
+/* 画像の幅を指定 */
+height: 70px;
+/* 画像の高さを指定 */
+margin-top: 10%;
+}
+
 .Input_form {
-    width: 100%;
-    /* 親要素の幅いっぱいに広げる */
-    max-width: 800px;
-    margin: 0 auto;
-    /* 横中央に配置 */
+    margin-top: 10%;
+width: 50%;
+height: 50px;
 }
 
 .button-container img {
@@ -164,18 +232,33 @@ li a:hover {
     /* 画像の高さを指定 */
 }
 
+.username {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.post-time {
+    font-size: 0.9em;
+    color: #888;
+    margin-left: auto;
+}
+
 /* 各ボタンの大きさ */
 #submitbutton,
 #update_button,
-#delete_button {
+#delete_button,
+#delete_h_button{
     width: 40px;
     height: 40px;
 }
 
-.Submit_button {
-    margin-left: 80%;
-
+.update_button,
+.delete_button,
+#delete_h_button {
+    width: 40px;
+    height: 40px;
 }
+
 
 /* 編集ボタンと削除ボタンの位置 */
 .button-container {
@@ -183,18 +266,9 @@ li a:hover {
     /* 子要素を横並びに */
     gap: 10px;
     /* ボタン間の隙間を設定 */
-    margin-left: 70%;
+    margin-left: 85%;
 }
 
-.update_button,
-.delete_button {
-    width: 40px;
-    height: 40px;
-}
-
-.delete_button :hover {
-    color: #FF0000;
-}
 
 /* ～検索レイアウト～ */
 .search_form {
@@ -224,56 +298,10 @@ li.follows {
 
 
 
-
-/* サイドバーレイアウト */
-#side-bar {
-    width: 250px; /* サイドバーの幅 */
-    position: fixed; /* サイドバーを画面の右側に固定 */
-    top: 72px;/*ヘッダーにかぶらない線の位置のはじまり*/
-    right: 0;
-    height: 80vh; /* 画面の高さ */
-    padding: 20px; /* 内側の余白 */
-    box-sizing: border-box; /* パディングとボーダーを幅に含める */
-    border-left: 1px solid #808080; /* 左の線 */
-}
-
-#confirm {
-    display: flex;
-    flex-direction: column; /* 縦に並べる */
-    gap: 20px; /* アイテム間のスペース */
-}
-
-#confirm p {
-    margin: 0; /* pタグの余白を削除 */
-}
-
-#clear {
-    margin-bottom: 20px;
-}
-
-#side-bar .btn {
-    margin-top: 10px; /* ボタンの間隔 */
-    padding: 10px 20px; /* ボタンの内側の余白 */
-    text-align: center;
-    width: auto; /* 幅を自動に設定 */
-    height: auto; /* 高さも自動で調整 */
-    display: block;
-    text-decoration: none; /* リンクの下線を消す */
-}
-
-#side-bar a {
-    text-decoration: none; /* リンクの下線を消す */
-}
-
-#side-bar a.btn {
-    display: block;
-    width: 80%; /* ボタンの横幅 */
-    text-align: center;
-    margin-top: 10px;
-}
-
 /* フォローリストレイアウト */
-
+.user-card{
+    display: flex;
+}
 
 
 

@@ -4,7 +4,7 @@
     <div>
     <a href="{{ route('user-profile', ['id' => $user->id]) }}">
     @if( $user->icon_image!="icon1.png")
-    <img src="{{ asset('storage/' . $user->icon_image) }}">
+    <img src="{{ asset('storage/' . $user->icon_image) }}" height="60" width="60">
     @else
     <img src="{{ asset('images/icon1.png') }}">
     @endif
@@ -14,7 +14,7 @@
       <!-- ユーザーアイコンの表示 -->
     <div>
       @if( $user->icon_image!="icon1.png")
-    <img src="{{ asset('storage/' . $user->icon_image) }}" alt="アイコン" id="icon">
+    <img src="{{ asset('storage/' . $user->icon_image) }}" alt="アイコン" id="icon" height="60" width="60">
     @else
     <img src="{{ asset('images/icon1.png') }}" alt="初期アイコン" id="firsticon">
     @endif

@@ -3,17 +3,36 @@
 
 
 <!-- 投稿フォームとボタンの設置 -->
+<div class="form-container">
+    <div class="icon-container">
+        @if( Auth::user()->icon_image!="icon1.png")
+        <img src="{{ asset('storage/' . Auth::user()->icon_image) }}" class="tweet-icon">
+        @else
+        <img src="{{ asset('images/icon1.png') }}" class="tweet-icon">
+        @endif
+    </div>
     <form action="/tweet" method="post">
         @csrf
-        <input type="text" name="tweet" value="" class="Input_form" placeholder="投稿内容を入力してください" required>
-        <button type="submit" class="Submit_button"><a><img src="images/post.png" alt="投稿ボタン" id="submitbutton"></a></button>
+            <!-- 投稿フォーム -->
+            <textarea name="tweet" value="" class="Input_form" placeholder="投稿内容を入力してください" required></textarea>
+
+            <!-- 投稿ボタン -->
+            <input type="image" class="Submit_button" src="images/post.png" alt="投稿ボタン" id="submitbutton">
+        </div>
     </form>
 
 <!-- 投稿の表示 -->
     @foreach ($posts as $post)
-    <!-- アイコンの表示 -->
-        <div class="post"><a><img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a></div>
-                {{ $post->post }}
+    <div class="tweet">
+        <!-- アイコンの表示 -->
+    <div class="post"><a><img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a></div>
+        <!-- ユーザー名の表示 -->
+        <p class="post_username">{{ $post->user->username }}</p>
+        <!-- 日時表示 -->
+        <p class="post-time">{{ $post->created_at->format('Y-m-d H:i') }}</p>
+    </div>
+    <!-- 投稿の表示 -->
+    {{ $post->post }}
 
     <div class="button-container">
         <!-- 編集ボタンの設置 -->
@@ -21,8 +40,11 @@
         <img src="images/edit.png" alt="編集ボタン" id="update_button"></a></button>
 
         <!-- 削除ボタンの設置 -->
-        <a href="/post/{{$post->id}}/delete"><img src="images/trash.png" alt="削除ボタン" id="delete_button">
-        </a>
+        <td><a id="delete-button" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
+        <img src="images/trash.png" onmouseover="this.src='images/trash-h.png'" onmouseout="this.src='images/trash.png'" alt="削除ボタン" id="delete_button">
+        <!-- <img src="images/trash-h.png" alt="ホバーボタン" id="delete_h_button"> -->
+        </a></td>
+
     </div>
         @endforeach
 

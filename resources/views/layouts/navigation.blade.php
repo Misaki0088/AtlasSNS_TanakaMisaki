@@ -5,11 +5,13 @@
             <p class="name">{{ Auth::user()->username }}さん</p>
         <div class="accordion-menu">
             <span class="accordion"></span>
-                <ul class="accordion-content">
+            <div class="accordion-content">
+                <ul>
                     <li><a href="{{ route('top') }}">HOME</a></li>
                     <li><a href="{{ route('profile') }}">プロフィール編集</a></li>
                     <li><a href="logout">ログアウト</a></li>
                 </ul>
+            </div>
         </div>
                     <!-- ユーザー名とアイコン -->
                     @if( Auth::user()->icon_image!="icon1.png")

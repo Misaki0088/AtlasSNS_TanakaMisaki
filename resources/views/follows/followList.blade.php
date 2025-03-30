@@ -6,7 +6,7 @@
     <div class="user-card">
         <a href="{{ route('user-profile', ['id' => $user->id]) }}">
         @if( $user->icon_image!="icon1.png")<!-- もしフォローしている人のアイコンがicon1じゃなかったら… -->
-        <img src="{{ asset('storage/' . $user->icon_image) }}"><!-- ストレージに入っているアイコンを表示してくれ -->
+        <img src="{{ asset('storage/' . $user->icon_image ) }}" height="60" width="60"><!-- ストレージに入っているアイコンを表示してくれ -->
         @else
         <img src="{{ asset('images/icon1.png') }}"><!-- ストレージにはいっていなかったらicon1を表示させてくれ -->
         @endif
@@ -17,7 +17,7 @@
     <div>
 
     @if( $user->icon_image!="icon1.png")
-        <img src="{{ asset('storage/' . $user->icon_image) }}">
+        <img src="{{ asset('storage/' . $user->icon_image) }}" height="60" width="60">
     @else
         <img src="{{ asset('images/icon1.png') }}">
     @endif
