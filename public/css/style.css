@@ -199,10 +199,21 @@ li a:hover {
 .form-container{
     display: flex;
     gap: 2%;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+}
+
+.Input_form {
+    margin-left: auto;
+    width: 100%;
+    height: 80px;
 }
 
 .form-container textarea{
-height: 50px;
+    height: 50px;
 }
 
 .tweet{
@@ -216,12 +227,6 @@ height: 50px;
     height: 70px;
     /* 画像の高さを指定 */
     margin-top: 10%;
-}
-
-.Input_form {
-    margin-left: auto;
-    width: 120%;
-    height: 50px;
 }
 
 .button-container img {
