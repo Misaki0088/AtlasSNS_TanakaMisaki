@@ -4,7 +4,7 @@
     @foreach ($users as $user)<!-- フォローしている人 -->
     <div>
     <div class="user-card">
-        <a href="{{ route('user-profile', ['id' => $user->id]) }}">
+        <a href="{{ route('user-profile', ['id' => $user->id]) }}"></a>
         @if( $user->icon_image!="icon1.png")<!-- もしフォローしている人のアイコンがicon1じゃなかったら… -->
         <img src="{{ asset('storage/' . $user->icon_image ) }}" height="60" width="60"><!-- ストレージに入っているアイコンを表示してくれ -->
         @else

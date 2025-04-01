@@ -211,17 +211,17 @@ height: 50px;
 
 .tweet-icon {
 /* これから投稿するフォーム */
-width: 70px;
-/* 画像の幅を指定 */
-height: 70px;
-/* 画像の高さを指定 */
-margin-top: 10%;
+    width: 70px;
+    /* 画像の幅を指定 */
+    height: 70px;
+    /* 画像の高さを指定 */
+    margin-top: 10%;
 }
 
 .Input_form {
-    margin-top: 10%;
-width: 50%;
-height: 50px;
+    margin-left: auto;
+    width: 120%;
+    height: 50px;
 }
 
 .button-container img {
