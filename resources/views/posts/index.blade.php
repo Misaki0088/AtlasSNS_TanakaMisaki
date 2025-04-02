@@ -13,10 +13,9 @@
     </div>
     <form action="/tweet" method="post">
         @csrf
-            <!-- 投稿フォーム -->
         <div class="form">
+            <!-- 投稿フォーム -->
             <textarea name="tweet" value="" class="Input_form" placeholder="投稿内容を入力してください" required></textarea>
-
             <!-- 投稿ボタン -->
             <input type="image" class="Submit_button" src="images/post.png" alt="投稿ボタン" id="submitbutton">
         </div>
@@ -27,7 +26,8 @@
 @foreach ($posts as $post)
 <div class="tweet">
         <!-- アイコンの表示 -->
-    <div class="post"><a><img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a>
+    <div class="post"><a>
+        <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a>
     </div>
         <!-- ユーザー名の表示 -->
         <p class="post_username">{{ $post->user->username }}</p>
