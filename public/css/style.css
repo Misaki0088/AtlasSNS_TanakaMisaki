@@ -40,6 +40,7 @@ header {
 
 #container {
     flex: 0 0 80%;
+    width: 80vw;
 }
 
 #side-bar {
@@ -47,8 +48,60 @@ header {
     border-left: 1px solid #727272;
     top: 72px;/*ヘッダーにかぶらない線の位置のはじまり*/
     right: 0;
-    height: 120vh; /* 画面の高さ */
-    padding: 20px; /* 内側の余白 */
+    padding: 2px;/*内側の余白*/
+    width: 20vw;
+}
+
+/*フォローとフォロワーと検索のボタン*/
+.follow_list_button{
+    background-color: #0656cf;
+    color: #fff;
+    border: none;
+    text-align: center;
+    display: block;
+    width:58%;
+    margin-left: auto;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.follower_list_button{
+    background-color: #0656cf;
+    color: #fff;
+    border: none;
+    text-align: center;
+    display: block;
+    width:58%;
+    margin-left: auto;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.user_search_button{
+    background-color: #0656cf;
+    color: #fff;
+    border: none;
+    text-align: center;
+    display: block;
+    width:58%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#clear{
+    border-bottom: 1px solid #727272;;
+    padding-bottom: 10%;
 }
 
 #confirm {
@@ -57,34 +110,25 @@ header {
     gap: 20px; /* アイテム間のスペース */
 }
 
-#confirm p {
-    margin: 0; /* pタグの余白を削除 */
+
+.search{
+    width:90%;
+    padding: 5%;
+    margin-left: 25%;
 }
 
-#clear {
-    margin-bottom: 20px;
+.following{
+    display: flex;
+    gap: 62px;
 }
 
-#side-bar .btn {
-    margin-top: 10px; /* ボタンの間隔 */
-    padding: 10px 20px; /* ボタンの内側の余白 */
-    text-align: center;
-    width: auto; /* 幅を自動に設定 */
-    height: auto; /* 高さも自動で調整 */
-    display: block;
-    text-decoration: none; /* リンクの下線を消す */
+.followed{
+    display: flex;
+    margin-top: 5%;
+    gap: 50px;
 }
 
-#side-bar a {
-    text-decoration: none; /* リンクの下線を消す */
-}
 
-#side-bar a.btn {
-    display: block;
-    width: 80%; /* ボタンの横幅 */
-    text-align: center;
-    margin-top: 10px;
-}
 
 /* モーダルの投稿機能 */
 .modal.is-open {
@@ -130,8 +174,8 @@ header {
     margin-left: 33%;
 }
 
-li,
-li a {
+.accordion-content li,
+.accordion-content li a {
     position: relative;
     top:30%;
     background-color: #fff;
@@ -189,9 +233,9 @@ li a:hover {
 
 /* アイコン */
 #icon {
-    width: 80px;
+    width: 60px;
     /* 画像の幅を指定 */
-    height: 80px;
+    height: 60px;
     /* 画像の高さを指定 */
     margin-left: 20%;
 }
@@ -199,60 +243,73 @@ li a:hover {
 /* 投稿フォーム */
 .form-container{
     display: flex;
-    gap: 2%;
+    border-bottom: 5px solid #ccc; /* 線の色と太さ */
+    margin-bottom: 1%;
+}
+
+.form-container form{
     margin-left: auto;
+    width: 90%;
 }
 
 .form{
     display: flex;
-    margin-left: auto;
+    margin-right: 10%;
 }
 
+
 .Input_form {
-    margin-left: auto;
-    width: 80%;
-    height: 80px;
+    width: 70%;
+    margin-left:10%;
+    background-color: #f5f8fa;
 }
 
 .form-container textarea{
-    height: 50px;
-    width: 50%;
+    /* height: 50px;width: 50%; */
+    border: none; /* デフォルトの枠線を削除 */
+}
+
+.form-container textarea:focus{
+    outline: none;
 }
 
 .tweet{
     display: flex;
-    border-bottom: 1px solid #ccc; /* 線の色と太さ */
-    padding-bottom: 10px; /* 投稿と線の間隔 */
-    margin-bottom: 20px; /* 他の投稿との間隔 */
+    margin-left: 15%;
 }
 
 .tweet-icon {
 /* これから投稿するフォームのアイコン*/
-    width: 70px;
+    width: 60px;
     /* 画像の幅を指定 */
-    height: 70px;
+    height: 60px;
     /* 画像の高さを指定 */
-    margin-top: 10%;
+    margin-left: 100%;
 }
 
-.username {
-    font-weight: bold;
-    margin: 5px 0;
+.post{
+margin-left: 30%;
+}
+
+.post_username{
+margin-left: 5%;
 }
 
 .post-time {
     font-size: 0.9em;
     color: #888;
     margin-left: auto;
+    margin-right: 5%;
 }
+
 
 /* 編集ボタンと削除ボタンの位置 */
 .button-container {
     display: flex;
-    /* 子要素を横並びに */
-    gap: 10px;
-    /* ボタン間の隙間を設定 */
-    margin-left: 85%;
+    gap: 10px;/* ボタン間の隙間を設定 */
+    border-bottom: 1px solid #ccc; /* 線の色と太さ */
+    padding-bottom: 10px; /* 投稿と線の間隔 */
+    margin-bottom: 1%; /* 他の投稿との間隔 */
 }
 
 .button-container img {
@@ -261,6 +318,10 @@ li a:hover {
     /* 画像の幅を指定 */
     height: 80px;
     /* 画像の高さを指定 */
+}
+
+.two_buttons{
+    margin-left:  85%;
 }
 
 
@@ -280,27 +341,87 @@ li a:hover {
     height: 40px;
 }
 
+#submitbutton{
+    margin-top: 10%;
+}
+
 
 
 /* ～検索レイアウト～ */
 .search_form {
-    width: auto;
-    /* 親要素の幅 */
-    max-width: 800px;
-    /* 最大幅を設定 */
-    margin: 0 auto;
-    /* 横中央に配置 */
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
-.Submit_button {
-    width: 30px;
-    height: 30px;
+.form_group{
+    border-bottom: 5px solid #ccc; /* 線の色と太さ */
+    margin-bottom: 5%;
+}
+
+#search_button {
+    width: 40px;
+    height:40px;
+}
+
+
+.danger_button{
+    background-color: #ed3833;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.primary_button{
+    background-color: #52acff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.search_user{
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+}
+
+.search_user_icon{
+    margin-left: 15%;
+}
+
+/* ボタンエリア */
+.follows_user{
+    display: flex;
+    align-items: center;  /* ボタンを垂直方向に中央揃え */
+    flex-grow: 1; /* 名前とボタンが並んだ際に空いているスペースを埋める */
+}
+
+p.follows{
+    margin-left: 2em;
+}
+
+.follows{
+    width: 35%;
+}
+
+button{
+    margin-left: 10px;
 }
 
 li.follows {
-    background-color: #fff;
     text-align: left;
-    padding: 15px;
+    padding: 5%;
     margin-top: 0;
     list-style: none;
     margin-bottom: 0px;
@@ -310,25 +431,44 @@ li.follows {
 
 
 
+
 /* フォローリストレイアウト */
 .user-card{
     display: flex;
+    margin-left: 10%;
 }
+
+.user-list{
+    display: flex;
+    border-bottom: 2px solid #ccc; /* 線の色と太さ */
+    padding-bottom: 3%; /* 投稿と線の間隔 */
+    margin-bottom: 5%; /* 他の投稿との間隔 */
+    margin-top: 5%;
+}
+
+.user_group{
+    margin-left: 2em;
+}
+
 
 
 
 
 
 /* プロフィールレイアウト */
-.label {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    display: block;
+.profile-header {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-bottom: 5%;
 }
 
 .input {
+    background-color: #c2c2c2;
     color: #000;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -336,9 +476,40 @@ li.follows {
     font-size: 1rem;
 }
 
-.new-button {
-    position: absolute;
-    top: 100%; /* 上からの位置 */
-    left: 10%; /* 左からの位置 */
-    width: 15%;
+input[type="password"] {
+    background-color: #c2c2c2 !important;  /* 背景色を強制的に適用 */
+    color: #000;
+    width: 80% !important;  /* 幅を強制的に適用 */
+    padding: 10px !important;
+    margin-bottom: 15px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    font-size: 1rem !important;
 }
+
+.username-container,
+.email-container,
+.password-container,
+.password-confirmation-container,
+.bio-container, .file-container {
+    display: flex;
+    min-width: 500px;
+}
+
+label{
+    width: 200px;
+}
+
+.new-button {
+    width: 80%;  /* 入力フィールドと同じ幅に設定 */
+    padding: 10px;
+    margin-top: 20px;  /* フィールドとボタンの間にスペースを追加 */
+    margin-bottom: 20px;  /* ボタンの下にスペースを追加 */
+    background-color: #f44336;  /* ボタンの背景色 */
+    border: none;/*枠線なし*/
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;  /* ボタンをブロック要素として表示 */
+    text-align: center;  /* ボタンのテキストを中央に配置 */
+}
+

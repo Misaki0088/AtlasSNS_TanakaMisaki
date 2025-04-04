@@ -19,14 +19,15 @@
             <!-- 投稿ボタン -->
             <input type="image" class="Submit_button" src="images/post.png" alt="投稿ボタン" id="submitbutton">
         </div>
+        <div class="form_form"></div>
     </form>
 </div>
 
-<!-- 投稿の表示 -->
+
 @foreach ($posts as $post)
 <div class="tweet">
         <!-- アイコンの表示 -->
-    <div class="post"><a>
+    <div class="tweet_name_time"><a>
         <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a>
     </div>
         <!-- ユーザー名の表示 -->
@@ -34,10 +35,13 @@
         <!-- 日時表示 -->
         <p class="post-time">{{ $post->created_at->format('Y-m-d H:i') }}</p>
 </div>
+    <div class="post">
     <!-- 投稿の表示 -->
     {{ $post->post }}
+    </div>
 
 <div class="button-container">
+    <div class="two_buttons">
         <!-- 編集ボタンの設置 -->
         <a class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
         <img src="images/edit.png" alt="編集ボタン" id="update_button"></a>
@@ -46,6 +50,7 @@
         <img src="images/trash.png" onmouseover="this.src='images/trash-h.png'" onmouseout="this.src='images/trash.png'" alt="削除ボタン" id="delete_button">
         <!-- <img src="images/trash-h.png" alt="ホバーボタン" id="delete_h_button"> -->
         </a></td>
+    </div>
 </div>
 @endforeach
 

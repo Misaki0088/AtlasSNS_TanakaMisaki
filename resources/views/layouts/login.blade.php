@@ -37,27 +37,24 @@
     </div>
     <div id="side-bar">
       <div id="confirm">
-      <div id="clear">
-  <p>{{ Auth::user()->username }}さんの</p>
-        <div>
-          <p>フォロー数</p>
-          <p>{{ Auth::user()->following()->count() }}名</p>
-          <!-- Auth::user()はログインしている人、followingでリレーションしたから入れないといけない -->
+        <div id="clear">
+            <p>{{ Auth::user()->username }}さんの</p>
+              <div class="following">
+                <p>フォロー数</p>
+                <p class="people">{{ Auth::user()->following()->count() }}人</p>
+                <!-- Auth::user()はログインしている人、followingでリレーションしたから入れないといけない -->
+              </div>
+                <a class="follow_list_button" href="/follow-list">フォローリスト</a>
+              <div class="followed">
+                <p>フォロワー数</p>
+                <p class="people">{{ Auth::user()->followed()->count() }}人</p>
+              </div>
+                <a class="follower_list_button" href="/follower-list">フォロワーリスト</a>
         </div>
-        <div class="primary_buttonset"></div>
-        <a class="btn btn-primary" href="/follow-list">フォローリスト</a>
-        <div>
-          <p>フォロワー数</p>
-          <p>{{ Auth::user()->followed()->count() }}名</p>
-        </div>
-        <a class="btn btn-primary" href="/follower-list">フォロワーリスト</a>
-        </div>
-      <a class="btn btn-primary" href="/search">ユーザー検索</a>
-        </div>
-        </div>
+            <a class="user_search_button" href="/search">ユーザー検索</a>
+      </div>
+    </div>
   </div>
-  <footer>
-  </footer>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/script.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
