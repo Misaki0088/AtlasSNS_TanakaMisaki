@@ -48,7 +48,6 @@ header {
     border-left: 1px solid #727272;
     top: 72px;/*ヘッダーにかぶらない線の位置のはじまり*/
     right: 0;
-    padding: 2px;/*内側の余白*/
     width: 20vw;
 }
 
@@ -102,6 +101,10 @@ header {
 #clear{
     border-bottom: 1px solid #727272;;
     padding-bottom: 10%;
+    padding-left: 10px;
+    margin-top: 5%;
+    margin-left: auto;
+    width: 250px;
 }
 
 #confirm {
@@ -260,7 +263,7 @@ li a:hover {
 
 .Input_form {
     width: 70%;
-    margin-left:10%;
+    margin-left:3%;
     background-color: #f5f8fa;
 }
 
@@ -288,11 +291,12 @@ li a:hover {
 }
 
 .post{
-margin-left: 30%;
+    margin-left: 23%;
 }
 
 .post_username{
-margin-left: 5%;
+    margin-left: 3%;
+    margin-top: 22px;
 }
 
 .post-time {
@@ -300,6 +304,7 @@ margin-left: 5%;
     color: #888;
     margin-left: auto;
     margin-right: 5%;
+    margin-top: 3%;
 }
 
 
@@ -349,22 +354,21 @@ margin-left: 5%;
 
 /* ～検索レイアウト～ */
 .search_form {
-    width: 100%;
-    max-width: 300px;
-    padding: 8px;
-    margin-top: 5%;
-    margin-left: 5%;
     margin-bottom: 5%;
+    margin-left: 20%;
+    margin-top: 5%;
+    height: 40px;
 }
 
 .form_group{
-    border-bottom: 5px solid #ccc; /* 線の色と太さ */
-    margin-bottom: 5%;
+    display: flex;
+    border-bottom: 5px solid #ccc;
 }
 
 #search_button {
     width: 40px;
     height:40px;
+    margin-top: 5%;
 }
 
 
@@ -394,6 +398,7 @@ margin-left: 5%;
     display: flex;
     align-items: center;
     margin-left: 15%;
+    margin-top: 3%;
 }
 
 .search_user_icon{
@@ -429,9 +434,6 @@ li.follows {
 }
 
 
-
-
-
 /* フォローリストレイアウト */
 .user-card{
     display: flex;
@@ -440,7 +442,7 @@ li.follows {
 
 .user-list{
     display: flex;
-    border-bottom: 2px solid #ccc; /* 線の色と太さ */
+    border-bottom: 5px solid #ccc; /* 線の色と太さ */
     padding-bottom: 3%; /* 投稿と線の間隔 */
     margin-bottom: 5%; /* 他の投稿との間隔 */
     margin-top: 5%;
@@ -450,8 +452,25 @@ li.follows {
     margin-left: 2em;
 }
 
+.follows_name_time{
+    display: flex;
+    margin-left: 15%;
+}
 
+.username{
+    margin-left: 3%;
+    }
 
+.post-date {
+        font-size: 0.9em;
+        color: #888;
+        margin-left: auto;
+        margin-right: 5%;
+    }
+
+.follows_post{
+    margin-left: 22%;
+}
 
 
 
@@ -465,8 +484,14 @@ li.follows {
     margin-bottom: 5%;
 }
 
+.profile_icon{
+    position: absolute;
+    left: 19%;
+    top:18%;
+}
+
 .input {
-    background-color: #c2c2c2;
+    background-color: #d8d8d8;
     color: #000;
     width: 80%;
     padding: 10px;
@@ -477,7 +502,7 @@ li.follows {
 }
 
 input[type="password"] {
-    background-color: #c2c2c2 !important;  /* 背景色を強制的に適用 */
+    background-color: #d8d8d8 !important;  /* 背景色を強制的に適用 */
     color: #000;
     width: 80% !important;  /* 幅を強制的に適用 */
     padding: 10px !important;
@@ -488,7 +513,7 @@ input[type="password"] {
 }
 
 .username-container,
-.email-container,
+.mail-container,
 .password-container,
 .password-confirmation-container,
 .bio-container, .file-container {
@@ -496,12 +521,16 @@ input[type="password"] {
     min-width: 500px;
 }
 
+.file-container{
+    height: 80px;
+}
+
 label{
     width: 200px;
 }
 
 .new-button {
-    width: 80%;  /* 入力フィールドと同じ幅に設定 */
+    width: 50%;  /* 入力フィールドと同じ幅に設定 */
     padding: 10px;
     margin-top: 20px;  /* フィールドとボタンの間にスペースを追加 */
     margin-bottom: 20px;  /* ボタンの下にスペースを追加 */
@@ -511,5 +540,6 @@ label{
     cursor: pointer;
     display: block;  /* ボタンをブロック要素として表示 */
     text-align: center;  /* ボタンのテキストを中央に配置 */
+    margin-left: auto;
 }
 

@@ -20,12 +20,13 @@
 <div class="profile-header">
     <div class="profile_icon_name">
         {{ Form::open(['url' => '/profile/update', 'method' => 'post', 'enctype' => 'multipart/form-data']) }}
-        @if( Auth::user()->icon_image!="icon1.png")
-        <img src="{{ asset('storage/' . Auth::user()->icon_image) }}"height="60" width="60">
-        @else
-        <img src="{{ asset('images/icon1.png') }}">
-        @endif
-
+        <div class="profile_icon">
+            @if( Auth::user()->icon_image!="icon1.png")
+            <img src="{{ asset('storage/' . Auth::user()->icon_image) }}"height="60" width="60">
+            @else
+            <img src="{{ asset('images/icon1.png') }}">
+            @endif
+        </div>
         <div class="username-container">
             {{ Form::label('ユーザー名') }}
             {{ Form::text('username',Auth::user()->username,['class' => 'input']) }}
@@ -35,7 +36,7 @@
         <div class="mail-container">
         {{ Form::label('メールアドレス') }}
         {{ Form::email('email',Auth::user()->email,['class' => 'input']) }}
-        <div class="mail-container">
+        </div>
 
         <div class="password-container">
             {{ Form::label('パスワード') }}

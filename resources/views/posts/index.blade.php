@@ -26,8 +26,8 @@
 
 @foreach ($posts as $post)
 <div class="tweet">
-        <!-- アイコンの表示 -->
     <div class="tweet_name_time"><a>
+        <!-- アイコンの表示 -->
         <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a>
     </div>
         <!-- ユーザー名の表示 -->

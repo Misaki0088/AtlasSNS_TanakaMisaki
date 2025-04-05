@@ -14,7 +14,7 @@
         @csrf
 <!-- submitはinputの船ようなイメージで大体一緒にいることが多い（今回はsubmit号でinputのkeywordのものを乗せてく） -->
     <input type="text" name="keyword" value="{{ request('keyword') }}" class="search_form" placeholder="ユーザー名" required>
-    <button><a><img src="images/search.png" id="search_button"></a></button>
+    <input type="image" id="search_button" src="images/search.png" alt="検索ボタン">
 {{ Form::close() }}
 
 <!-- $usersはUserControllerでUserテーブルのすべてのことだよって書いた-->
