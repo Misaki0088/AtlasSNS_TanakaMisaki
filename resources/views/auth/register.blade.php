@@ -5,22 +5,22 @@
 
 <div class="form-container ">
 <p class="Atlas">新規ユーザー登録</p>
-<div class="form-group">
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+    <div class="form-group">
+        {{ Form::label('ユーザー名') }}
+        {{ Form::text('username',null,['class' => 'input']) }}
 
-{{ Form::label('メールアドレス') }}
-{{ Form::email('email',null,['class' => 'input']) }}
+        {{ Form::label('メールアドレス') }}
+        {{ Form::email('email',null,['class' => 'input']) }}
 
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+        {{ Form::label('パスワード') }}
+        {{ Form::text('password',null,['class' => 'input']) }}
 
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
-</div>
-
+        {{ Form::label('パスワード確認') }}
+        {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+    </div>
+<div class="submit-btn">
 {{ Form::submit('新規登録', ['class' => 'btn btn-danger resister-button']) }}
-
+</div>
 <p class="register"><a href="login">ログイン画面へ戻る</a></p>
 </div>
 {!! Form::close() !!}

@@ -25,7 +25,7 @@
     <body>
         <header>
         <div class="title">
-            <h8><img src="images/atlas.png" style="width: 10%; height: auto;"></h8>
+            <img src="images/atlas.png" style="width: 10%; height: auto;">
             <p class="subtitle">Social Network Service</p>
         </div>
         </header>

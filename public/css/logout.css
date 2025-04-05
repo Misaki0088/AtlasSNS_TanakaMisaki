@@ -19,6 +19,7 @@ body {
     background-color: #2a28281c;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 450px;
 }
 
 /* ラベルと入力フィールド */
@@ -42,8 +43,16 @@ body {
     padding: 10px;
 }
 
+.resister-button{
+    margin-top: 30px;
+}
+
 .title {
     text-align: center;
+}
+
+.title img{
+    padding-top: 24px;
 }
 
 .subtitle {
@@ -77,8 +86,8 @@ body {
 .register {
     text-align: center;
     margin-top: 20%;
-
 }
+
 
 /* リンク */
 .register a {
