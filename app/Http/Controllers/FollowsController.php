@@ -20,7 +20,7 @@ class FollowsController extends Controller
         $users = User::whereIn('id',$plucked)->get();
 
         //フォローしているユーザーの投稿を取得
-        $posts = Post::whereIn('user_id', $plucked)->get();
+        $posts = Post::whereIn('user_id', $plucked)->orderBy('created_at','desc')->get();
 
         //ビューにデータを渡す
         return view('follows.followList',['users' => $users,'posts' =>$posts]);
@@ -37,7 +37,7 @@ class FollowsController extends Controller
         $users = User::whereIn('id',$plucked)->get();
 
         //フォローされているユーザーの投稿を取得
-        $posts = Post::whereIn('user_id', $plucked)->get();
+        $posts = Post::whereIn('user_id', $plucked)->orderBy('created_at','desc')->get();
 
         //ビューにデータを渡す
         return view('follows.followerList',['users' => $users,'posts' =>$posts]);

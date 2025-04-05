@@ -15,19 +15,23 @@
   </div>
 </div>
 
-<div class="user">
-  @foreach ($posts as $post)
-    <!-- ユーザーアイコンの表示 -->
-    @if( $post->user->icon_image!="icon1.png")
-    <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" height="60" width="60">
-    @else
-    <img src="{{ asset('images/icon1.png') }}">
-    @endif
-      <p class="username">{{ $post->user->username }}</p> <!-- ユーザー名 -->
-      <div class="follows_post">
-          <p>{{ $post->post }}</p> <!-- 投稿内容 -->
-          <p>{{ $post->created_at }}</p><!-- 投稿日付 -->
-      </div>
-  @endforeach
-</div>
+@foreach ($posts as $post)
+  <div class="user">
+        <div class ="follows_name_time">
+            <div class="follows_icon">
+            <!-- ユーザーアイコンの表示 -->
+            @if( $post->user->icon_image!="icon1.png")
+            <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" height="60" width="60">
+            @else
+            <img src="{{ asset('images/icon1.png') }}">
+            @endif
+        </div>
+          <p class="username">{{ $post->user->username }}</p> <!-- ユーザー名 -->
+          <p class="post-date">{{ $post->created_at }}</p><!-- 投稿日付 -->
+        </div>
+        <div class="follows_post">
+            <p>{{ $post->post }}</p> <!-- 投稿内容 -->
+        </div>
+  </div>
+@endforeach
 </x-login-layout>

@@ -296,7 +296,7 @@ li a:hover {
 
 .post_username{
     margin-left: 3%;
-    margin-top: 22px;
+    margin-top: 26px;
 }
 
 .post-time {
@@ -304,7 +304,7 @@ li a:hover {
     color: #888;
     margin-left: auto;
     margin-right: 5%;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 
@@ -444,32 +444,47 @@ li.follows {
     display: flex;
     border-bottom: 5px solid #ccc; /* 線の色と太さ */
     padding-bottom: 3%; /* 投稿と線の間隔 */
-    margin-bottom: 5%; /* 他の投稿との間隔 */
-    margin-top: 5%;
+    margin-bottom: 1%; /* 他の投稿との間隔 */
+    margin-top: 3%;
 }
 
 .user_group{
     margin-left: 2em;
 }
 
+.follows_icon{
+    margin-left: 20%;
+}
+
 .follows_name_time{
     display: flex;
-    margin-left: 15%;
+    margin-left: 3%;
+}
+
+.user{
+    border-bottom: 1px solid #ccc; /* 線の色と太さ */
+    margin-bottom: 1%;
 }
 
 .username{
-    margin-left: 3%;
-    }
+    margin-left: 1%;
+    margin-top: 10px;
+}
 
 .post-date {
-        font-size: 0.9em;
-        color: #888;
-        margin-left: auto;
-        margin-right: 5%;
-    }
+    font-size: 0.9em;
+    color: #888;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: 10px;
+}
 
 .follows_post{
-    margin-left: 22%;
+    margin-left: 29.5%;
+}
+
+.follows_post p {
+    vertical-align: -30%;
 }
 
 
