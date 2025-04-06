@@ -1,12 +1,12 @@
 <x-logout-layout>
-  <div id="clear">
+  <div id="new_register">
   @if (session('username'))
-    <p>{{ session('username') }}さん</p>
+    <p class=new_register_username>{{ session('username') }}さん</p>
   @endif
-    <p>ようこそ！AtlasSNSへ！</p>
-    <p>ユーザー登録が完了しました。</p>
-    <p>早速ログインをしてみましょう。</p>
+    <p class="welcome">ようこそ！AtlasSNSへ！</p>
+    <p class="new_register_clear">ユーザー登録が完了しました。</p>
+    <p class="login_clear">早速ログインをしてみましょう！</p>
 
-    <p class="btn"><a href="login">ログイン画面へ</a></p>
+    <p class="new_register_btn"><a href="login">ログイン画面へ</a></p>
   </div>
 </x-logout-layout>

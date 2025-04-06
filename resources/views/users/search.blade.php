@@ -15,6 +15,9 @@
 <!-- submitはinputの船ようなイメージで大体一緒にいることが多い（今回はsubmit号でinputのkeywordのものを乗せてく） -->
     <input type="text" name="keyword" value="{{ request('keyword') }}" class="search_form" placeholder="ユーザー名" required>
     <input type="image" id="search_button" src="images/search.png" alt="検索ボタン">
+@if (request('keyword'))
+    <p class="search-keyword">検索ワード: {{ request('keyword') }}</p>
+@endif
 {{ Form::close() }}
 
 <!-- $usersはUserControllerでUserテーブルのすべてのことだよって書いた-->

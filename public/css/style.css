@@ -23,12 +23,14 @@ header {
     color: #fff;
     margin-left: auto;
     margin-top: 15px;
-    margin-right: 5%;
+    margin-right: 6%;
 }
 
 .header-icon {
-    width: 5%;
-    height: auto;
+    width: 3%;
+    height: 40px;
+    margin-top: 3px;
+    margin-right: 1%;
 }
 
 
@@ -161,11 +163,11 @@ header {
 .modal__content {
     background: #fff;
     left: 50%;
-    padding: 40px;
+    padding-top: 15px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 40%;
 }
 
 /* アコーディオンメニュー */
@@ -292,6 +294,9 @@ li a:hover {
 
 .post{
     margin-left: 23%;
+    word-wrap: break-word;  /* 長い単語が折り返す */
+    word-break: break-word; /* 文字列が途中で折り返し可能 */
+    white-space: normal;    /* 自然な折り返しを有効にする */
 }
 
 .post_username{
@@ -304,7 +309,6 @@ li a:hover {
     color: #888;
     margin-left: auto;
     margin-right: 5%;
-    margin-top: 4%;
 }
 
 
@@ -325,6 +329,13 @@ li a:hover {
     /* 画像の高さを指定 */
 }
 
+.modal_post{
+    width: 80%;
+    height: 100px;
+    margin-left: 10%;
+}
+
+
 .two_buttons{
     margin-left:  85%;
 }
@@ -341,9 +352,14 @@ li a:hover {
 
 .update_button,
 .delete_button,
-#delete_h_button {
+#delete_h_button,
+#modal_update_button {
     width: 40px;
     height: 40px;
+}
+
+#modal_update_button{
+    margin-left: 45%;
 }
 
 #submitbutton{
@@ -358,6 +374,13 @@ li a:hover {
     margin-left: 20%;
     margin-top: 5%;
     height: 40px;
+}
+
+.search-keyword{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 6%;
+    margin-left: 3%;
 }
 
 .form_group{

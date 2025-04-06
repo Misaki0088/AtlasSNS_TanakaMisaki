@@ -61,7 +61,8 @@
             <form action="/post/update" method="POST">
                 <textarea name="post_content" class="modal_post"></textarea>
                 <input type="hidden" name="post_id" class="modal_id" value="">
-                <input type="submit" value="更新">
+                <!-- <input type="submit" value="更新"> -->
+                <input type="image" class="Submit_button" src="images/edit.png" alt="更新ボタン" id="modal_update_button">
                 {{ csrf_field() }}
             </form>
         </div>

@@ -3,7 +3,7 @@
 {{ Form::open(['url' => 'register']) }}
 <!-- <Form action=" " method=" "></Form> -->
 
-<div class="form-container ">
+<div class="form-register_container ">
 <p class="Atlas">新規ユーザー登録</p>
     <div class="form-group">
         {{ Form::label('ユーザー名') }}
