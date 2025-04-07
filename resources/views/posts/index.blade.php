@@ -28,7 +28,8 @@
 <div class="tweet">
     <div class="tweet_name_time">
         <!-- アイコンの表示 -->
-        <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon">
+        <a href="{{ route('user-profile', ['id' => $post->user->id]) }}">
+        <img src="{{ asset('storage/' . $post->user->icon_image) }}" alt="アイコン" id="icon"></a>
     </div>
         <!-- ユーザー名の表示 -->
         <p class="post_username">{{ $post->user->username }}</p>

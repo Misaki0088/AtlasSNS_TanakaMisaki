@@ -507,6 +507,9 @@ li.follows {
 }
 
 .follows_post p {
+    word-wrap: break-word;  /* 長い単語が折り返される */
+    word-break: break-word; /* 文字列が途中で折り返し可能 */
+    white-space: normal;    /* 自然に折り返し */
     vertical-align: -30%;
 }
 
@@ -581,3 +584,90 @@ label{
     margin-left: auto;
 }
 
+/* 他ユーザープロフィールレイアウト */
+#user_profile_icon {
+    width: 60px;
+    /* 画像の幅を指定 */
+    height: 60px;
+    /* 画像の高さを指定 */
+    margin-left: 10%;
+}
+
+.user_profile_container{
+    border-bottom: 5px solid #ccc; /* 線の色と太さ */
+    margin-bottom: 1%;
+}
+
+.user_profile_username_title{
+    margin-left: 10px;
+}
+
+.user_profile_bios_title{
+    margin-left: 17%;
+}
+
+.user_profile_names{
+    display: flex;
+    margin-top: 5%;
+}
+
+.user_profile_name{
+    margin-left: 9%;
+}
+
+.user_profile_bios{
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.user_profile_bio{
+    margin-left: 10%;
+}
+
+.user_profile_btn{
+    margin-left: 10%;
+}
+
+.user_profile_icon{
+    margin-left: 10%;
+}
+
+.user_profile_name_time{
+    display: flex;
+    margin-left: 3%;
+}
+
+.user_profile{
+    border-bottom: 1px solid #ccc; /* 線の色と太さ */
+    margin-bottom: 1%;
+}
+
+.username{
+    margin-left: 1%;
+    margin-top: 10px;
+}
+
+
+.user_profile_postname{
+    margin-left: 1%;
+    margin-top: 10px;
+}
+
+.user_profile_postdate {
+    font-size: 0.9em;
+    color: #888;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: 10px;
+}
+
+.user_profile_post{
+    margin-left: 19.5%;
+}
+
+.user_profile_post p {
+    word-wrap: break-word;  /* 長い単語が折り返される */
+    word-break: break-word; /* 文字列が途中で折り返し可能 */
+    white-space: normal;    /* 自然に折り返し */
+    vertical-align: -30%;
+}
