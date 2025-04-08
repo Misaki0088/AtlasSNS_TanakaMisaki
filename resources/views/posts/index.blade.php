@@ -43,6 +43,7 @@
 
 <div class="button-container">
     <div class="two_buttons">
+        @if( Auth::user()->id==$post->user_id)
         <!-- 編集ボタンの設置 -->
         <a class="update_button js-modal-open" data-id="{{ $post->id }}" data-post="{{ $post->post }}">
         <img src="images/edit.png" alt="編集ボタン" id="update_button"></a>
@@ -51,6 +52,7 @@
         <img src="images/trash.png" onmouseover="this.src='images/trash-h.png'" onmouseout="this.src='images/trash.png'" alt="削除ボタン" id="delete_button">
         <!-- <img src="images/trash-h.png" alt="ホバーボタン" id="delete_h_button"> -->
         </a></td>
+        @endif
     </div>
 </div>
 @endforeach
